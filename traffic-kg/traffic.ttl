@@ -12,7 +12,7 @@
 
 <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic> rdf:type owl:Ontology ;
                                                              owl:versionIRI <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/1.0.1> ;
-                                                             owl:imports <http://ontology.eil.utoronto.ca/icity/OTN/1.0/> ;
+                                                             owl:imports <http://ontology.eil.utoronto.ca/icity/OTN/> ;
                                                              rdfs:comment "Traffic ontology v1.0.1 - Optimized GeoSPARQL integration"@en .
 
 #################################################################
