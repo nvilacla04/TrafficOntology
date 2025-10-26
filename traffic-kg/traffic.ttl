@@ -1,500 +1,801 @@
 @prefix : <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
-@prefix sf: <http://www.opengis.net/ont/sf#> .
-@base <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic> .
-
-<http://www.semanticweb.org/nicol/ontologies/2025/9/traffic> rdf:type owl:Ontology ;
-                                                             owl:versionIRI <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/1.0.1> ;
-                                                             owl:imports <http://ontology.eil.utoronto.ca/icity/OTN/> ;
-                                                             rdfs:comment "Traffic ontology v1.0.1 - Optimized GeoSPARQL integration"@en .
-
-#################################################################
-#    External Class References (Selective GeoSPARQL)
-#################################################################
-
-###  http://www.opengis.net/ont/geosparql#Geometry
-geo:Geometry rdf:type owl:Class ;
-             rdfs:label "Geometry"@en ;
-             rdfs:comment "The class represents the top-level geometry type"@en ;
-             rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> .
-
-###  http://www.opengis.net/ont/geosparql#Feature
-geo:Feature rdf:type owl:Class ;
-            rdfs:label "Feature"@en ;
-            rdfs:comment "The class represents the top-level feature type"@en ;
-            rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> .
-
-#################################################################
-#    External Property References (Selective GeoSPARQL)
-#################################################################
-
-###  http://www.opengis.net/ont/geosparql#hasGeometry
-geo:hasGeometry rdf:type owl:ObjectProperty ;
-                rdfs:label "has geometry"@en ;
-                rdfs:comment "A spatial representation for a given feature"@en ;
-                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> .
-
-###  http://www.opengis.net/ont/geosparql#asWKT  
-geo:asWKT rdf:type owl:DatatypeProperty ;
-          rdfs:label "as WKT"@en ;
-          rdfs:comment "The WKT serialization of a geometry"@en ;
-          rdfs:domain geo:Geometry ;
-          rdfs:range geo:wktLiteral .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/carriedBy
-traffic:carriedBy rdf:type owl:ObjectProperty ;
-                  rdf:type owl:IrreflexiveProperty ;
-                  rdf:type owl:AsymmetricProperty ;
-                  rdf:type owl:FunctionalProperty ;
-                  rdfs:domain traffic:VehicleFlow ;
-                  rdfs:range traffic:Road ;
-                  owl:inverseOf traffic:carries ;
-                  rdfs:label "carried by"@en ;
-                  rdfs:comment "Relates a vehicle flow to the road that carries it"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/carries
-traffic:carries rdf:type owl:ObjectProperty ;
-                rdf:type owl:IrreflexiveProperty ;
-                rdf:type owl:AsymmetricProperty ;
-                rdfs:domain traffic:Road ;
-                rdfs:range traffic:VehicleFlow ;
-                owl:inverseOf traffic:carriedBy ;
-                rdfs:label "carries"@en ;
-                rdfs:comment "Relates a road to the vehicle flow it carries"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/connectsTo
-traffic:connectsTo rdf:type owl:ObjectProperty ;
-                   rdf:type owl:SymmetricProperty ;
-                   rdf:type owl:IrreflexiveProperty ;
-                   rdfs:domain traffic:RoadSegment ;
-                   rdfs:range traffic:RoadSegment ;
-                   rdfs:label "connects to"@en ;
-                   rdfs:comment "Relates two road segments that are connected to each other"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/detectsEvent
-traffic:detectsEvent rdf:type owl:ObjectProperty ;
-                     rdf:type owl:IrreflexiveProperty ;
-                     rdf:type owl:AsymmetricProperty ;
-                     rdfs:domain traffic:Sensor ;
-                     rdfs:range traffic:TrafficEvent ;
-                     owl:inverseOf traffic:detectedBy ;
-                     rdfs:label "detects event"@en ;
-                     rdfs:comment "Relates a sensor to a traffic event it detects"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/detectedBy
-traffic:detectedBy rdf:type owl:ObjectProperty ;
-                   rdf:type owl:IrreflexiveProperty ;
-                   rdf:type owl:AsymmetricProperty ;
-                   rdfs:domain traffic:TrafficEvent ;
-                   rdfs:range traffic:Sensor ;
-                   owl:inverseOf traffic:detectsEvent ;
-                   rdfs:label "detected by"@en ;
-                   rdfs:comment "Relates a traffic event to the sensor that detected it"@en .
-
 
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasGeometry
-traffic:hasGeometry rdf:type owl:ObjectProperty ;
-                    rdf:type owl:FunctionalProperty ;
-                    rdf:type owl:IrreflexiveProperty ;
-                    rdfs:subPropertyOf geo:hasGeometry ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( traffic:Road
-                                                traffic:RoadSegment
-                                                traffic:Junction
-                                                traffic:Structure
-                                              )
-                                ] ;
-                    rdfs:range geo:Geometry ;
-                    rdfs:label "has geometry"@en ;
-                    rdfs:comment "Relates a traffic infrastructure element to its spatial geometry"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasRoadType
-traffic:hasRoadType rdf:type owl:ObjectProperty ;
-                    rdf:type owl:FunctionalProperty ;
-                    rdf:type owl:IrreflexiveProperty ;
-                    rdfs:domain traffic:Road ;
-                    rdfs:range traffic:RoadType ;
-                    rdfs:label "has road type"@en ;
-                    rdfs:comment "Relates a road to its road type classification"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasSegment
-traffic:hasSegment rdf:type owl:ObjectProperty ;
-                   rdf:type owl:TransitiveProperty ;
-                   rdf:type owl:IrreflexiveProperty ;
-                   rdf:type owl:AsymmetricProperty ;
-                   rdfs:domain traffic:Road ;
-                   rdfs:range traffic:RoadSegment ;
-                   owl:inverseOf traffic:isSegmentOf ;
-                   rdfs:label "has segment"@en ;
-                   rdfs:comment "Relates a road to its constituent segments"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/isSegmentOf
-traffic:isSegmentOf rdf:type owl:ObjectProperty ;
-                    rdf:type owl:TransitiveProperty ;
-                    rdf:type owl:IrreflexiveProperty ;
-                    rdf:type owl:AsymmetricProperty ;
-                    rdfs:domain traffic:RoadSegment ;
-                    rdfs:range traffic:Road ;
-                    owl:inverseOf traffic:hasSegment ;
-                    rdfs:label "is segment of"@en ;
-                    rdfs:comment "Relates a road segment to the road it belongs to"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasSensor
-traffic:hasSensor rdf:type owl:ObjectProperty ;
-                  rdf:type owl:IrreflexiveProperty ;
-                  rdf:type owl:AsymmetricProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( traffic:Road
-                                              traffic:Junction
-                                            )
-                              ] ;
-                  rdfs:range traffic:Sensor ;
-                  owl:inverseOf traffic:monitors ;
-                  rdfs:label "has sensor"@en ;
-                  rdfs:comment "Relates a road or junction to a sensor installed on it"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/monitors
-traffic:monitors rdf:type owl:ObjectProperty ;
-                 rdf:type owl:IrreflexiveProperty ;
-                 rdf:type owl:AsymmetricProperty ;
-                 rdfs:domain traffic:Sensor ;
-                 rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( traffic:Road
-                                            traffic:Junction
-                                          )
-                            ] ;
-                 owl:inverseOf traffic:hasSensor ;
-                 rdfs:label "monitors"@en ;
-                 rdfs:comment "Relates a sensor to the road or junction it monitors"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasTrafficFlow
-traffic:hasTrafficFlow rdf:type owl:ObjectProperty ;
-                       rdf:type owl:IrreflexiveProperty ;
-                       rdf:type owl:AsymmetricProperty ;
-                       rdfs:domain traffic:RoadSegment ;
-                       rdfs:range traffic:VehicleFlow ;
-                       owl:inverseOf traffic:flowsOn ;
-                       rdfs:label "has traffic flow"@en ;
-                       rdfs:comment "Relates a road segment to the vehicle flow on it"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/flowsOn
-traffic:flowsOn rdf:type owl:ObjectProperty ;
-                rdf:type owl:IrreflexiveProperty ;
-                rdf:type owl:AsymmetricProperty ;
-                rdfs:domain traffic:VehicleFlow ;
-                rdfs:range traffic:RoadSegment ;
-                owl:inverseOf traffic:hasTrafficFlow ;
-                rdfs:label "flows on"@en ;
-                rdfs:comment "Relates a vehicle flow to the road segment it flows on"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/locatedIn
-traffic:locatedIn rdf:type owl:ObjectProperty ;
-                  rdf:type owl:TransitiveProperty ;
-                  rdf:type owl:IrreflexiveProperty ;
-                  rdf:type owl:AsymmetricProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( traffic:Road
-                                              traffic:Junction
-                                              traffic:Structure
-                                              traffic:Sensor
-                                            )
-                              ] ;
-                  rdfs:range traffic:Location ;
-                  owl:inverseOf traffic:contains ;
-                  rdfs:label "located in"@en ;
-                  rdfs:comment "Relates an infrastructure element to its location"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/contains
-traffic:contains rdf:type owl:ObjectProperty ;
-                 rdf:type owl:TransitiveProperty ;
-                 rdf:type owl:IrreflexiveProperty ;
-                 rdf:type owl:AsymmetricProperty ;
-                 rdfs:domain traffic:Location ;
-                 rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( traffic:Road
-                                            traffic:Junction
-                                            traffic:Structure
-                                            traffic:Sensor
-                                          )
-                            ] ;
-                 owl:inverseOf traffic:locatedIn ;
-                 rdfs:label "contains"@en ;
-                 rdfs:comment "Relates a location to the infrastructure elements it contains"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/occursOn
-traffic:occursOn rdf:type owl:ObjectProperty ;
-                 rdf:type owl:IrreflexiveProperty ;
-                 rdf:type owl:AsymmetricProperty ;
-                 rdfs:domain traffic:TrafficEvent ;
-                 rdfs:range traffic:RoadSegment ;
-                 owl:inverseOf traffic:hasOccurrence ;
-                 rdfs:label "occurs on"@en ;
-                 rdfs:comment "Relates a traffic event to the road segment where it occurs"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasOccurrence
-traffic:hasOccurrence rdf:type owl:ObjectProperty ;
-                      rdf:type owl:IrreflexiveProperty ;
-                      rdf:type owl:AsymmetricProperty ;
-                      rdfs:domain traffic:RoadSegment ;
-                      rdfs:range traffic:TrafficEvent ;
-                      owl:inverseOf traffic:occursOn ;
-                      rdfs:label "has occurrence"@en ;
-                      rdfs:comment "Relates a road segment to traffic events that occur on it"@en .
-
-
-#################################################################
-#    Data Properties
-#################################################################
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/avgSpeed
-traffic:avgSpeed rdf:type owl:DatatypeProperty ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain traffic:VehicleFlow ;
-                 rdfs:range [ rdf:type rdfs:Datatype ;
-                              owl:onDatatype xsd:float ;
-                              owl:withRestrictions ( [ xsd:minInclusive 0.0 ]
-                                                      [ xsd:maxInclusive 300.0 ]
-                                                    )
-                            ] ;
-                 rdfs:label "average speed"@en ;
-                 rdfs:comment "The average speed of vehicles in km/h (range: 0-300)"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/flowRate
-traffic:flowRate rdf:type owl:DatatypeProperty ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain traffic:VehicleFlow ;
-                 rdfs:range [ rdf:type rdfs:Datatype ;
-                              owl:onDatatype xsd:integer ;
-                              owl:withRestrictions ( [ xsd:minInclusive 0 ] )
-                            ] ;
-                 rdfs:label "flow rate"@en ;
-                 rdfs:comment "The number of vehicles per hour (minimum: 0)"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/timestamp
-traffic:timestamp rdf:type owl:DatatypeProperty ;
-                  rdf:type owl:FunctionalProperty ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( traffic:TrafficEvent
-                                              traffic:VehicleFlow
-                                            )
-                              ] ;
-                  rdfs:range xsd:dateTime ;
-                  rdfs:label "timestamp"@en ;
-                  rdfs:comment "The date and time when something occurred or was measured (ISO 8601 format)"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/maxSpeedLimit
-traffic:maxSpeedLimit rdf:type owl:DatatypeProperty ;
-                      rdf:type owl:FunctionalProperty ;
-                      rdfs:domain traffic:Road ;
-                      rdfs:range [ rdf:type rdfs:Datatype ;
-                                   owl:onDatatype xsd:integer ;
-                                   owl:withRestrictions ( [ xsd:minInclusive 5 ]
-                                                           [ xsd:maxInclusive 200 ]
-                                                         )
-                                 ] ;
-                      rdfs:label "maximum speed limit"@en ;
-                      rdfs:comment "The maximum legal speed limit on the road in km/h (range: 5-200)"@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Accident
-traffic:Accident rdf:type owl:Class ;
-                 rdfs:subClassOf traffic:TrafficEvent ;
-                 owl:disjointWith traffic:Congestion ,
-                                  traffic:RoadWork ;
-                 rdfs:label "Accident"@en ;
-                 rdfs:comment "A traffic event involving a collision or incident"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bridge
-traffic:Bridge rdf:type owl:Class ;
-               rdfs:subClassOf traffic:Structure ;
-               owl:disjointWith traffic:Tunnel ;
-               rdfs:label "Bridge"@en ;
-               rdfs:comment "A structure that spans a physical obstacle"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/City
-traffic:City rdf:type owl:Class ;
-             rdfs:subClassOf traffic:Location ;
-             owl:disjointWith traffic:PostalArea ;
-             rdfs:label "City"@en ;
-             rdfs:comment "An urban location or municipality"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Congestion
-traffic:Congestion rdf:type owl:Class ;
-                   rdfs:subClassOf traffic:TrafficEvent ;
-                   owl:disjointWith traffic:RoadWork ,
-                                    traffic:Accident ;
-                   rdfs:label "Congestion"@en ;
-                   rdfs:comment "A traffic event characterized by slow-moving or stopped vehicles"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Highway
-traffic:Highway rdf:type owl:Class ;
-                rdfs:subClassOf traffic:Road ;
-                owl:disjointWith traffic:LocalRoad ;
-                rdfs:label "Highway"@en ;
-                rdfs:comment "A major road for high-speed vehicular traffic"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Junction
-traffic:Junction rdf:type owl:Class ;
-                 rdfs:subClassOf traffic:TrafficNetwork ;
-                 owl:disjointWith traffic:Road ;
-                 rdfs:label "Junction"@en ;
-                 rdfs:comment "A point where two or more roads meet or intersect"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/LocalRoad
-traffic:LocalRoad rdf:type owl:Class ;
-                  rdfs:subClassOf traffic:Road ;
-                  owl:disjointWith traffic:Highway ;
-                  rdfs:label "Local Road"@en ;
-                  rdfs:comment "A road serving local traffic with lower speed limits"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Location
-traffic:Location rdf:type owl:Class ;
-                 rdfs:label "Location"@en ;
-                 rdfs:comment "A geographic area or place"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/PostalArea
-traffic:PostalArea rdf:type owl:Class ;
-                   rdfs:subClassOf traffic:Location ;
-                   owl:disjointWith traffic:City ;
-                   rdfs:label "Postal Area"@en ;
-                   rdfs:comment "A geographic area designated by postal codes"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Road
-traffic:Road rdf:type owl:Class ;
-             rdfs:subClassOf traffic:TrafficNetwork ;
-             owl:disjointWith traffic:Junction ;
-             rdfs:label "Road"@en ;
-             rdfs:comment "A thoroughfare for vehicular and pedestrian traffic"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadSegment
-traffic:RoadSegment rdf:type owl:Class ;
-                    rdfs:subClassOf traffic:Road ;
-                    rdfs:label "Road Segment"@en ;
-                    rdfs:comment "A portion or section of a road"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadType
-traffic:RoadType rdf:type owl:Class ;
-                 rdfs:label "Road Type"@en ;
-                 rdfs:comment "A classification category for roads (linked to Wikidata)"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadWork
-traffic:RoadWork rdf:type owl:Class ;
-                 rdfs:subClassOf traffic:TrafficEvent ;
-                 owl:disjointWith traffic:Accident ,
-                                  traffic:Congestion ;
-                 rdfs:label "Road Work"@en ;
-                 rdfs:comment "A traffic event involving construction or maintenance activities"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Sensor
-traffic:Sensor rdf:type owl:Class ;
-               rdfs:label "Sensor"@en ;
-               rdfs:comment "A device that detects and measures traffic conditions"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Structure
-traffic:Structure rdf:type owl:Class ;
-                  rdfs:label "Structure"@en ;
-                  rdfs:comment "A physical construction in the traffic network"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrafficEvent
-traffic:TrafficEvent rdf:type owl:Class ;
-                     rdfs:label "Traffic Event"@en ;
-                     rdfs:comment "An occurrence or incident that affects traffic flow"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrafficNetwork
-traffic:TrafficNetwork rdf:type owl:Class ;
-                       rdfs:label "Traffic Network"@en ;
-                       rdfs:comment "The system of interconnected roads and junctions"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Tunnel
-traffic:Tunnel rdf:type owl:Class ;
-               rdfs:subClassOf traffic:Structure ;
-               owl:disjointWith traffic:Bridge ;
-               rdfs:label "Tunnel"@en ;
-               rdfs:comment "An underground passage for vehicular traffic"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/VehicleFlow
-traffic:VehicleFlow rdf:type owl:Class ;
-                    rdfs:label "Vehicle Flow"@en ;
-                    rdfs:comment "The movement of vehicles along a road segment"@en .
-
-
-###  http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/WeatherCondition
-traffic:WeatherCondition rdf:type owl:Class ;
-                         rdfs:label "Weather Condition"@en ;
-                         rdfs:comment "The atmospheric state affecting traffic conditions"@en .
-
-
-#################################################################
-#    General Axioms
-#################################################################
-
-# Restriction: RoadSegment locatedIn exactly 1 City
-[ rdf:type owl:Restriction ;
-  owl:onProperty traffic:locatedIn ;
-  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass traffic:City ;
-  rdfs:subClassOf traffic:RoadSegment
-] .
-
-# Restriction: Sensor detectsEvent at least 1 TrafficEvent
-[ rdf:type owl:Restriction ;
-  owl:onProperty traffic:detectsEvent ;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass traffic:TrafficEvent ;
-  rdfs:subClassOf traffic:Sensor
-] .
-
-
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
-### Manually optimized for Group 9 - Traffic Ontology Project
+<http://www.semanticweb.org/nicol/ontologies/2025/9/traffic> a owl:Ontology ;
+	owl:versionIRI traffic:1.0.1 ;
+	owl:imports <http://ontology.eil.utoronto.ca/icity/OTN/> ;
+	rdfs:comment "Traffic ontology v1.0.1 - Optimized GeoSPARQL integration"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.opengis.net/ont/geosparql#asWKT
+
+geo:asWKT a owl:ObjectProperty ;
+	rdfs:domain geo:Geometry ;
+	rdfs:range geo:wktLiteral .
+# 
+# http://www.opengis.net/ont/geosparql#hasGeometry
+
+geo:hasGeometry a owl:ObjectProperty ;
+	rdfs:comment "A spatial representation for a given feature"@en ;
+	rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+	rdfs:label "has geometry"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/carriedBy
+
+traffic:carriedBy a owl:ObjectProperty ;
+	owl:inverseOf traffic:carries ;
+	a owl:FunctionalProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:VehicleFlow ;
+	rdfs:range traffic:Road ;
+	rdfs:comment "Relates a vehicle flow to the road that carries it"@en ;
+	rdfs:label "carried by"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/carries
+
+traffic:carries a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Road ;
+	rdfs:range traffic:VehicleFlow ;
+	rdfs:comment "Relates a road to the vehicle flow it carries"@en ;
+	rdfs:label "carries"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/connectsTo
+
+traffic:connectsTo a owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range traffic:RoadSegment ;
+	rdfs:comment "Relates two road segments that are connected to each other"@en ;
+	rdfs:label "connects to"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/contains
+
+traffic:contains a owl:ObjectProperty ;
+	owl:inverseOf traffic:locatedIn ;
+	a owl:AsymmetricProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Location ;
+	rdfs:range _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first traffic:Junction ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first traffic:Road ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first traffic:Sensor ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first traffic:Structure ;
+	rdf:rest rdf:nil .
+
+traffic:contains rdfs:comment "Relates a location to the infrastructure elements it contains"@en ;
+	rdfs:label "contains"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/detectedBy
+
+traffic:detectedBy a owl:ObjectProperty ;
+	owl:inverseOf traffic:detectsEvent ;
+	a owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:TrafficEvent ;
+	rdfs:range traffic:Sensor ;
+	rdfs:comment "Relates a traffic event to the sensor that detected it"@en ;
+	rdfs:label "detected by"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/detectsEvent
+
+traffic:detectsEvent a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Sensor ;
+	rdfs:range traffic:TrafficEvent ;
+	rdfs:comment "Relates a sensor to a traffic event it detects"@en ;
+	rdfs:label "detects event"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/flowsOn
+
+traffic:flowsOn a owl:ObjectProperty ;
+	owl:inverseOf traffic:hasTrafficFlow ;
+	a owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:VehicleFlow ;
+	rdfs:range traffic:RoadSegment ;
+	rdfs:comment "Relates a vehicle flow to the road segment it flows on"@en ;
+	rdfs:label "flows on"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasGeometry
+
+traffic:hasGeometry a owl:ObjectProperty ;
+	rdfs:subPropertyOf geo:hasGeometry ;
+	a owl:FunctionalProperty , owl:IrreflexiveProperty ;
+	rdfs:domain _:genid6 .
+
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first traffic:Junction ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first traffic:Road ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first traffic:RoadSegment ;
+	rdf:rest _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first traffic:Structure ;
+	rdf:rest rdf:nil .
+
+traffic:hasGeometry rdfs:range geo:Geometry ;
+	rdfs:comment "Relates a traffic infrastructure element to its spatial geometry"@en ;
+	rdfs:label "has geometry"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasOccurrence
+
+traffic:hasOccurrence a owl:ObjectProperty ;
+	owl:inverseOf traffic:occursOn ;
+	a owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range traffic:TrafficEvent ;
+	rdfs:comment "Relates a road segment to traffic events that occur on it"@en ;
+	rdfs:label "has occurrence"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasRoadCondition
+
+traffic:hasRoadCondition a owl:ObjectProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range traffic:RoadCondition .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasRoadType
+
+traffic:hasRoadType a owl:ObjectProperty , owl:FunctionalProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Road ;
+	rdfs:range traffic:RoadType ;
+	rdfs:comment "Relates a road to its road type classification"@en ;
+	rdfs:label "has road type"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasSegment
+
+traffic:hasSegment a owl:ObjectProperty ;
+	owl:inverseOf traffic:isSegmentOf ;
+	a owl:AsymmetricProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Road ;
+	rdfs:range traffic:RoadSegment ;
+	rdfs:comment "Relates a road to its constituent segments"@en ;
+	rdfs:label "has segment"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasSensor
+
+traffic:hasSensor a owl:ObjectProperty ;
+	owl:inverseOf traffic:monitors ;
+	a owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain _:genid11 .
+
+_:genid11 a owl:Class ;
+	owl:unionOf _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first traffic:Junction ;
+	rdf:rest _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first traffic:Road ;
+	rdf:rest rdf:nil .
+
+traffic:hasSensor rdfs:range traffic:Sensor ;
+	rdfs:comment "Relates a road or junction to a sensor installed on it"@en ;
+	rdfs:label "has sensor"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasSeverity
+
+traffic:hasSeverity a owl:ObjectProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range traffic:Severity .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasTrafficFlow
+
+traffic:hasTrafficFlow a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range traffic:VehicleFlow ;
+	rdfs:comment "Relates a road segment to the vehicle flow on it"@en ;
+	rdfs:label "has traffic flow"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/hasTrafficSign
+
+traffic:hasTrafficSign a owl:ObjectProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range traffic:TrafficSign .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/involvesVehicle
+
+traffic:involvesVehicle a owl:ObjectProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range traffic:Vehicle .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/isSegmentOf
+
+traffic:isSegmentOf a owl:ObjectProperty , owl:AsymmetricProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range traffic:Road ;
+	rdfs:comment "Relates a road segment to the road it belongs to"@en ;
+	rdfs:label "is segment of"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/locatedIn
+
+traffic:locatedIn a owl:ObjectProperty , owl:AsymmetricProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+	rdfs:domain _:genid14 .
+
+_:genid14 a owl:Class ;
+	owl:unionOf _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first traffic:Junction ;
+	rdf:rest _:genid17 .
+
+_:genid17 a rdf:List ;
+	rdf:first traffic:Road ;
+	rdf:rest _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first traffic:Sensor ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first traffic:Structure ;
+	rdf:rest rdf:nil .
+
+traffic:locatedIn rdfs:range traffic:Location ;
+	rdfs:comment "Relates an infrastructure element to its location"@en ;
+	rdfs:label "located in"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/monitors
+
+traffic:monitors a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:Sensor ;
+	rdfs:range _:genid19 .
+
+_:genid19 a owl:Class ;
+	owl:unionOf _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first traffic:Junction ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first traffic:Road ;
+	rdf:rest rdf:nil .
+
+traffic:monitors rdfs:comment "Relates a sensor to the road or junction it monitors"@en ;
+	rdfs:label "monitors"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/occursOn
+
+traffic:occursOn a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
+	rdfs:domain traffic:TrafficEvent ;
+	rdfs:range traffic:RoadSegment ;
+	rdfs:comment "Relates a traffic event to the road segment where it occurs"@en ;
+	rdfs:label "occurs on"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.opengis.net/ont/geosparql#asWKT
+
+geo:asWKT a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/avgSpeed
+
+traffic:avgSpeed a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain traffic:VehicleFlow ;
+	rdfs:range _:genid22 .
+
+_:genid22 a rdfs:Datatype ;
+	owl:onDatatype xsd:float ;
+	owl:withRestrictions _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first _:genid26 .
+
+_:genid26 xsd:minInclusive "0.0"^^xsd:decimal .
+
+_:genid25 rdf:rest _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first _:genid24 .
+
+_:genid24 xsd:maxInclusive "300.0"^^xsd:decimal .
+
+_:genid23 rdf:rest rdf:nil .
+
+traffic:avgSpeed rdfs:comment "The average speed of vehicles in km/h (range: 0-300)"@en ;
+	rdfs:label "average speed"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/bronID
+
+traffic:bronID a owl:DatatypeProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range xsd:string ;
+	rdfs:comment "To store the verkeersongeval_nummer" .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/flowRate
+
+traffic:flowRate a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain traffic:VehicleFlow ;
+	rdfs:range _:genid27 .
+
+_:genid27 a rdfs:Datatype ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first _:genid29 .
+
+_:genid29 xsd:minInclusive "0"^^xsd:integer .
+
+_:genid28 rdf:rest rdf:nil .
+
+traffic:flowRate rdfs:comment "The number of vehicles per hour (minimum: 0)"@en ;
+	rdfs:label "flow rate"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/locationType
+
+traffic:locationType a owl:DatatypeProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range xsd:string ;
+	rdfs:comment "This holds \"Binnen\" or \"Buiten\"" .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/maxSpeedLimit
+
+traffic:maxSpeedLimit a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain traffic:Road ;
+	rdfs:range _:genid30 .
+
+_:genid30 a rdfs:Datatype ;
+	owl:onDatatype xsd:integer ;
+	owl:withRestrictions _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first _:genid34 .
+
+_:genid34 xsd:minInclusive "5"^^xsd:integer .
+
+_:genid33 rdf:rest _:genid31 .
+
+_:genid31 a rdf:List ;
+	rdf:first _:genid32 .
+
+_:genid32 xsd:maxInclusive "200"^^xsd:integer .
+
+_:genid31 rdf:rest rdf:nil .
+
+traffic:maxSpeedLimit rdfs:comment "The maximum legal speed limit on the road in km/h (range: 5-200)"@en ;
+	rdfs:label "maximum speed limit"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/osmID
+
+traffic:osmID a owl:DatatypeProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range xsd:string ;
+	rdfs:comment "To store the osm_id" .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/partyCount
+
+traffic:partyCount a owl:DatatypeProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range xsd:positiveInteger .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/rvvCode
+
+traffic:rvvCode a owl:DatatypeProperty ;
+	rdfs:domain traffic:TrafficSign ;
+	rdfs:range xsd:token .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/surface
+
+traffic:surface a owl:DatatypeProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/timestamp
+
+traffic:timestamp a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid35 .
+
+_:genid35 a owl:Class ;
+	owl:unionOf _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first traffic:TrafficEvent ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first traffic:VehicleFlow ;
+	rdf:rest rdf:nil .
+
+traffic:timestamp rdfs:range xsd:dateTime ;
+	rdfs:comment "The date and time when something occurred or was measured (ISO 8601 format)"@en ;
+	rdfs:label "timestamp"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/year
+
+traffic:year a owl:DatatypeProperty ;
+	rdfs:domain traffic:Accident ;
+	rdfs:range xsd:integer ;
+	rdfs:comment "protege wouldn't recognize [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)#gYear so we compromised with integer" .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/zoneTraffic
+
+traffic:zoneTraffic a owl:DatatypeProperty ;
+	rdfs:domain traffic:RoadSegment ;
+	rdfs:range xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.opengis.net/ont/geosparql#Feature
+
+geo:Feature a owl:Class ;
+	rdfs:comment "The class represents the top-level feature type"@en ;
+	rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+	rdfs:label "Feature"@en .
+# 
+# http://www.opengis.net/ont/geosparql#Geometry
+
+geo:Geometry a owl:Class ;
+	rdfs:comment "The class represents the top-level geometry type"@en ;
+	rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+	rdfs:label "Geometry"@en .
+# 
+# http://www.opengis.net/ont/geosparql#wktLiteral
+
+geo:wktLiteral a owl:Class .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Accident
+
+traffic:Accident a owl:Class ;
+	rdfs:subClassOf traffic:TrafficEvent ;
+	owl:disjointWith traffic:Congestion , traffic:RoadWork ;
+	rdfs:comment "A traffic event involving a collision or incident"@en ;
+	rdfs:label "Accident"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bridge
+
+traffic:Bridge a owl:Class ;
+	rdfs:subClassOf traffic:Structure ;
+	owl:disjointWith traffic:Tunnel ;
+	rdfs:comment "A structure that spans a physical obstacle"@en ;
+	rdfs:label "Bridge"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bycicle
+
+traffic:Bycicle a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Car
+
+traffic:Car a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/City
+
+traffic:City a owl:Class ;
+	rdfs:subClassOf traffic:Location ;
+	owl:disjointWith traffic:PostalArea ;
+	rdfs:comment "An urban location or municipality"@en ;
+	rdfs:label "City"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Congestion
+
+traffic:Congestion a owl:Class ;
+	rdfs:subClassOf traffic:TrafficEvent ;
+	owl:disjointWith traffic:RoadWork ;
+	rdfs:comment "A traffic event characterized by slow-moving or stopped vehicles"@en ;
+	rdfs:label "Congestion"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Dry
+
+traffic:Dry a owl:Class ;
+	rdfs:subClassOf traffic:RoadCondition .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Fatal
+
+traffic:Fatal a owl:Class ;
+	rdfs:subClassOf traffic:Severity .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Injury
+
+traffic:Injury a owl:Class ;
+	rdfs:subClassOf traffic:Severity .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Junction
+
+traffic:Junction a owl:Class ;
+	rdfs:subClassOf traffic:TrafficNetwork ;
+	owl:disjointWith traffic:Road ;
+	rdfs:comment "A point where two or more roads meet or intersect"@en ;
+	rdfs:label "Junction"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/LinkRoad
+
+traffic:LinkRoad a owl:Class ;
+	rdfs:subClassOf traffic:Road ;
+	owl:disjointWith traffic:LocalRoad , traffic:MajorRoad .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/LivingStreet
+
+traffic:LivingStreet a owl:Class ;
+	rdfs:subClassOf traffic:LocalRoad ;
+	owl:disjointWith traffic:Residential , traffic:Tertiary , traffic:Unclassified .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/LocalRoad
+
+traffic:LocalRoad a owl:Class ;
+	rdfs:subClassOf traffic:Road ;
+	owl:disjointWith traffic:MajorRoad .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Location
+
+traffic:Location a owl:Class ;
+	rdfs:comment "A geographic area or place"@en ;
+	rdfs:label "Location"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/MajorRoad
+
+traffic:MajorRoad a owl:Class ;
+	rdfs:subClassOf traffic:Road .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/MaterialDamageOnly
+
+traffic:MaterialDamageOnly a owl:Class ;
+	rdfs:subClassOf traffic:Severity .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Moped
+
+traffic:Moped a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle ;
+	rdfs:comment "\"bromfiets\" in the BRON dataset" .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Motorway
+
+traffic:Motorway a owl:Class ;
+	rdfs:subClassOf traffic:MajorRoad ;
+	owl:disjointWith traffic:Primary , traffic:Secondary , traffic:Trunk .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/MotorwayLink
+
+traffic:MotorwayLink a owl:Class ;
+	rdfs:subClassOf traffic:LinkRoad ;
+	owl:disjointWith traffic:PrimaryLink , traffic:SecondaryLink , traffic:TertiaryLink , traffic:TrunkLink .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Pedestrian
+
+traffic:Pedestrian a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/PostalArea
+
+traffic:PostalArea a owl:Class ;
+	rdfs:subClassOf traffic:Location ;
+	rdfs:comment "A geographic area designated by postal codes"@en ;
+	rdfs:label "Postal Area"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Primary
+
+traffic:Primary a owl:Class ;
+	rdfs:subClassOf traffic:MajorRoad ;
+	owl:disjointWith traffic:Secondary , traffic:Trunk .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/PrimaryLink
+
+traffic:PrimaryLink a owl:Class ;
+	rdfs:subClassOf traffic:LinkRoad ;
+	owl:disjointWith traffic:SecondaryLink , traffic:TertiaryLink , traffic:TrunkLink .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Residential
+
+traffic:Residential a owl:Class ;
+	rdfs:subClassOf traffic:LocalRoad ;
+	owl:disjointWith traffic:Tertiary , traffic:Unclassified .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Road
+
+traffic:Road a owl:Class ;
+	rdfs:subClassOf traffic:TrafficNetwork ;
+	rdfs:comment "A thoroughfare for vehicular and pedestrian traffic"@en ;
+	rdfs:label "Road"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadCondition
+
+traffic:RoadCondition a owl:Class .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadSegment
+
+traffic:RoadSegment a owl:Class ;
+	rdfs:subClassOf traffic:Road ;
+	rdfs:comment "A portion or section of a road"@en ;
+	rdfs:label "Road Segment"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadType
+
+traffic:RoadType a owl:Class ;
+	rdfs:comment "A classification category for roads (linked to Wikidata)"@en ;
+	rdfs:label "Road Type"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/RoadWork
+
+traffic:RoadWork a owl:Class ;
+	rdfs:subClassOf traffic:TrafficEvent ;
+	rdfs:comment "A traffic event involving construction or maintenance activities"@en ;
+	rdfs:label "Road Work"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Secondary
+
+traffic:Secondary a owl:Class ;
+	rdfs:subClassOf traffic:MajorRoad ;
+	owl:disjointWith traffic:Trunk .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/SecondaryLink
+
+traffic:SecondaryLink a owl:Class ;
+	rdfs:subClassOf traffic:LinkRoad ;
+	owl:disjointWith traffic:TertiaryLink , traffic:TrunkLink .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Sensor
+
+traffic:Sensor a owl:Class ;
+	rdfs:comment "A device that detects and measures traffic conditions"@en ;
+	rdfs:label "Sensor"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Severity
+
+traffic:Severity a owl:Class .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Snow
+
+traffic:Snow a owl:Class ;
+	rdfs:subClassOf traffic:RoadCondition .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Structure
+
+traffic:Structure a owl:Class ;
+	rdfs:comment "A physical construction in the traffic network"@en ;
+	rdfs:label "Structure"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Tertiary
+
+traffic:Tertiary a owl:Class ;
+	rdfs:subClassOf traffic:LocalRoad ;
+	owl:disjointWith traffic:Unclassified .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TertiaryLink
+
+traffic:TertiaryLink a owl:Class ;
+	rdfs:subClassOf traffic:LinkRoad ;
+	owl:disjointWith traffic:TrunkLink .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrafficEvent
+
+traffic:TrafficEvent a owl:Class ;
+	rdfs:comment "An occurrence or incident that affects traffic flow"@en ;
+	rdfs:label "Traffic Event"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrafficNetwork
+
+traffic:TrafficNetwork a owl:Class ;
+	rdfs:comment "The system of interconnected roads and junctions"@en ;
+	rdfs:label "Traffic Network"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrafficSign
+
+traffic:TrafficSign a owl:Class .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Truck
+
+traffic:Truck a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Trunk
+
+traffic:Trunk a owl:Class ;
+	rdfs:subClassOf traffic:MajorRoad .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/TrunkLink
+
+traffic:TrunkLink a owl:Class ;
+	rdfs:subClassOf traffic:LinkRoad .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Tunnel
+
+traffic:Tunnel a owl:Class ;
+	rdfs:subClassOf traffic:Structure ;
+	rdfs:comment "An underground passage for vehicular traffic"@en ;
+	rdfs:label "Tunnel"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Unclassified
+
+traffic:Unclassified a owl:Class ;
+	rdfs:subClassOf traffic:LocalRoad .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Vehicle
+
+traffic:Vehicle a owl:Class .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/VehicleFlow
+
+traffic:VehicleFlow a owl:Class ;
+	rdfs:comment "The movement of vehicles along a road segment"@en ;
+	rdfs:label "Vehicle Flow"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Wet
+
+traffic:Wet a owl:Class ;
+	rdfs:subClassOf traffic:RoadCondition .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+
+geo:asWKT rdfs:comment "The WKT serialization of a geometry"@en ;
+	rdfs:label "as WKT"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid38 a owl:Restriction ;
+	owl:onProperty traffic:detectsEvent ;
+	owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass traffic:TrafficEvent ;
+	rdfs:subClassOf traffic:Sensor .
+# 
+
+_:genid39 a owl:Restriction ;
+	owl:onProperty traffic:locatedIn ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass traffic:City ;
+	rdfs:subClassOf traffic:RoadSegment .
+# 
+# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
