@@ -159,4 +159,4 @@ You must import the files in the correct order, each into its own **named graph*
 
 ## 4. Analysis & Competency Questions
 
-All SPARQL queries used to answer our final Competency Questions, are located in the root directory with the names **`query1.txt`** for example. The graphdb output of the queries has been exported to .csv files called **`query1-result`** for example. Finally, all visuals and data analyses were made in and using the **`data.ipynb`** notebook.
+All SPARQL queries used to answer our final Competency Questions, are located in the query result sub-directory with the names **`query1.txt`** for example. The graphdb output of the queries has been exported to .csv files called **`query1-result`** for example. Finally, all visuals and data analyses were made in and using the **`data.ipynb`** notebook.
