@@ -762,6 +762,11 @@ traffic:VehicleFlow a owl:Class ;
 traffic:Wet a owl:Class ;
 	rdfs:subClassOf traffic:RoadCondition .
 # 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/otherVehicle
+
+traffic:otherVehicle a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
 # 
 # 
 # #################################################################

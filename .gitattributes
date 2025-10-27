@@ -4,3 +4,4 @@
 *.gpkg filter=lfs diff=lfs merge=lfs -text
 *.osm.pbf filter=lfs diff=lfs merge=lfs -text
 data_rdf/road_network.ttl filter=lfs diff=lfs merge=lfs -text
+data_rdf/accidents.ttl filter=lfs diff=lfs merge=lfs -text
