@@ -1,0 +1,27 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT 
+    ?road 
+    ?roadName 
+    (COUNT(DISTINCT ?accident) AS ?totalAccidents)
+    (AVG(?avgSpeed) AS ?averageSpeed)
+    (AVG(?flowRate) AS ?averageFlow)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+    ?accident traffic:occursOn ?road .
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/flow> {
+    ?flow traffic:measuredBy ?sensor ;
+          traffic:avgSpeed ?avgSpeed ;
+          traffic:flowRate ?flowRate .
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/sensors> {
+    ?sensor traffic:monitors ?road .
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+    ?road rdfs:label ?roadName .
+  }
+}
+GROUP BY ?road ?roadName
+ORDER BY DESC(?totalAccidents)
+LIMIT 25

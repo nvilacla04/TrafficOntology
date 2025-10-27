@@ -1,0 +1,20 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?rvvCode ?signLabel (COUNT(DISTINCT ?accident) AS ?accidentCount)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+    ?accident rdf:type traffic:Accident ;
+              traffic:occursOn ?road .
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/signs> {
+    ?road traffic:hasTrafficSign ?sign .
+    
+    # Also get the sign's details from this graph
+    ?sign traffic:rvvCode ?rvvCode ;
+          rdfs:label ?signLabel .
+  }
+}
+GROUP BY ?rvvCode ?signLabel
+ORDER BY DESC(?accidentCount)
+LIMIT 25

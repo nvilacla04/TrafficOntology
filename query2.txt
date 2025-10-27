@@ -1,0 +1,42 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT 
+    ?infrastructureLabel 
+    ?severityLabel 
+    (COUNT(DISTINCT ?accident) AS ?count)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/categories> {
+    ?severity rdfs:label ?severityLabel .
+    FILTER(lang(?severityLabel) = "en") # Use 'en' or 'nl'
+  }
+  
+  {
+    GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+      ?accident traffic:occursOn ?road ;
+                traffic:hasSeverity ?severity .
+    }
+    GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+      ?road rdf:type ?type .
+      FILTER (?type IN (traffic:Bridge, traffic:Tunnel))
+      BIND(IF(?type = traffic:Bridge, "Bridge", "Tunnel") AS ?infrastructureLabel)
+    }
+  }
+  UNION
+  {
+    GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+      ?accident traffic:occursOn ?road ;
+                traffic:hasSeverity ?severity .
+    }
+    GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+      ?road traffic:hasTrafficSign ?sign .
+    }
+    GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/signs> {
+      ?sign traffic:rvvCode "B7"^^xsd:token .
+    }
+    BIND("Road with Stop Sign" AS ?infrastructureLabel)
+  }
+}
+GROUP BY ?infrastructureLabel ?severityLabel
+ORDER BY ?infrastructureLabel DESC(?count)

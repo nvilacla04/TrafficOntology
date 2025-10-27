@@ -1,0 +1,22 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?vehicleClass (COUNT(?accident) AS ?accidentCount)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+    ?road rdf:type ?roadType .
+    FILTER(?roadType IN (traffic:Residential, traffic:LivingStreet))
+  }
+  
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+    ?accident traffic:occursOn ?road ;
+              traffic:involvesVehicle ?vehicle .
+              
+    ?vehicle rdf:type ?vehicleClass .
+    
+    # Exclude the generic base class from the count
+    FILTER(?vehicleClass != traffic:Vehicle) 
+  }
+}
+GROUP BY ?vehicleClass
+ORDER BY DESC(?accidentCount)

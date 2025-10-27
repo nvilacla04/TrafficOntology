@@ -1,0 +1,18 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?road ?roadName (COUNT(?accident) AS ?totalAccidents) (COUNT(DISTINCT ?year) AS ?yearsWithAccidents)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+    ?accident traffic:occursOn ?road ;
+              traffic:year ?year .
+    FILTER(?year IN (2022, 2023, 2024))
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+    ?road rdfs:label ?roadName .
+  }
+}
+GROUP BY ?road ?roadName
+HAVING (COUNT(DISTINCT ?year) >= 2) 
+ORDER BY DESC(?totalAccidents)
+LIMIT 20
