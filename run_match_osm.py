@@ -148,7 +148,7 @@ def main() -> None:
     # -------------------------------------------------------------------------
     # Step 1: Load OSM data (ONLY ONCE)
     # -------------------------------------------------------------------------
-    gpkg_file = project_root / "OSM_data_filtered.gpkg"
+    gpkg_file = project_root / "data_raw" / "OSM_data_filtered.gpkg"
     # we just load the raw columns and not parse other_tags here
     columns_to_load = ["osm_id", "highway", "name", "other_tags", "geometry"]
     
