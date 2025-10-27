@@ -171,12 +171,8 @@ You must import the files in the correct order, each into its own **named graph*
 
 ## 4. Analysis & Competency Questions
 
-All SPARQL queries used to answer our final Competency Questions, are located in the query result sub-directory with the names **`query1.txt`** for example. The graphdb output of the queries has been exported to .csv files called **`query1-result`** for example. Finally, all visuals and data analyses were made in and using the **`data.ipynb`** notebook.
+All SPARQL queries used to answer our final Competency Questions, are located in the query result sub-directory with the names **`query1.txt`** for example. The graphdb output of the queries has been exported to .csv files called **`query1-result`** for example. Finally, all visuals and data analyses were made in and using the **`data.ipynb`** notebook. In order to see the complete data pipeline analysis there is another notebook called **`data_integrated_queries.ipynb`** that contains the queries integrated in python. There is however a local issue with memory that prevents the cells from running correctly. There is 1. a manual csv reading fallback in each cell, and 2. the other file which contains working visualization.
 
-
-## 4. Analysis & Competency Questions
-
-All SPARQL queries used to answer our final Competency Questions, along with data visualizations and analysis, are located in the **`queries.ipynb`** Jupyter Notebook.
 
 ## 5. Data Sources
 
