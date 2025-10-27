@@ -1,0 +1,1001 @@
+road,roadName,totalAccidents,averageSpeed,averageFlow
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7379192,Ringweg-West,301,43.0,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7045322,Ringweg-Oost,284,107.20691,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_721901494,Poot van Metz,244,23.533785,766.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509618594,Rijksweg,149,90.125,585.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7302625,Rijksweg,116,19.696636,825.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_221205616,Ringweg-West,113,86.666664,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7302620,Rijksweg,104,68.32748,1334.166666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_69054575,Rijksweg,99,88.096634,1355.555555555555555555555556
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_947310929,Rijksweg,98,104.0,1360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1323520335,Provinciale weg,96,80.49981,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_140826822,Westrandweg,77,61.818638,1040.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381798,Ringweg-West,69,44.839256,1282.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_409314345,Gaasperdammerweg,66,98.552635,1302.631578947368421052631579
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_486782034,Ringweg-Zuid,59,74.25,1682.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6884681,Slenkweg,54,30.131582,871.25
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1093953832,Ringweg-Zuid,53,56.25,1770.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_968847006,Burgemeester van Sonweg,52,97.60007,2196.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6600993,Provincialeweg,49,79.42853,651.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381723,Ringweg-Zuid,48,45.0,1164.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491590642,Ringweg-West,47,86.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43584249,Poot van Metz,46,51.75,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_123379292,Ringweg-Noord,46,77.5,690.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850623,Europaweg,46,104.435875,730.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_621490784,Rijksweg,46,24.53358,834.166666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849016,Europaweg,44,37.166656,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_858735028,Schipholweg,44,93.5,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7467810,Utrechtsebaan,43,58.99712,1375.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_131302647,Schiedamseweg,42,30.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_730222432,Weg der Verenigde Naties,42,81.33108,1160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7042488,Ringweg-Noord,42,103.88881,926.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43658983,Poot van Metz,41,76.75,1275.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7374869,Ringweg-Zuid,41,38.800014,1176.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6877064,Nijmeegseweg,39,44.733334,638.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_375809547,Provincialeweg,39,83.14284,651.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1359663076,Ringweg-Zuid,39,38.25,1455.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_138410817,Neerbosscheweg,38,90.33334,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7367352,Mijdrechtse Zuwe,38,49.33335,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_26957030,Nieuwe Haagseweg,38,80.0,1300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848722,Europaweg,38,75.499954,1450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43584254,Poot van Metz,36,56.5,1230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7370135,Ringweg-Zuid,36,53.25,1020.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_852173505,Ringweg-West,36,70.0,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_56993702,Poot van Metz,35,94.25,1560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_35949853,Nieuwe Haagseweg,35,87.16666,1055.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231949803,Nieuwe Haagseweg,35,96.19999,1404.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7368902,Ringweg-Zuid,35,40.75,1350.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850635,Slenkweg,35,47.0,810.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6731226,Rijksweg,34,64.33331,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7131516,Maaseikerweg,34,57.33333,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_495535097,Ringweg-Oost,34,95.90002,1002.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_208472730,Europaweg,34,75.52054,772.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7513665,Dordtselaan,33,10.0,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6600980,Provincialeweg,33,75.4,990.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6947561,Linkermaasoeverweg,33,91.25,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_721901496,Poot van Metz,32,92.0194,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7382988,Ringweg-West,32,72.0,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7044070,Ringweg-Oost,32,107.66669,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509486307,Europaweg,32,94.33332,1600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6683519,Nijverdalsestraat,31,60.25,1125.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_899924646,Rijksstraatweg,31,86.83331,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_130106320,Westrandweg,31,103.900505,794.117647058823529411764706
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1034879252,Weg der Verenigde Naties,31,71.56836,1420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_82955400,Ringweg-Noord,31,23.5,825.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7040861,Ringweg-Noord,31,97.555534,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6836002,Delhuijzenweg,31,89.136185,1431.428571428571428571428571
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_739745380,Haarlemmerweg,30,94.60001,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_822598789,Nieuwe Haagseweg,30,24.499992,1200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7041917,Ringweg-Noord,30,8.666669,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849046,Otterloseweg,29,76.66665,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6875799,Pleijweg,29,8.944445,483.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_126730141,Beneluxweg,29,87.208336,1165.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849015,Europaweg,29,30.0,960.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_329801812,Provincialeweg,28,75.66668,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6612988,Westerweg,28,47.0,750.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7518834,Schiedamseweg,28,47.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1331091270,Ringweg-Noord,28,54.0,1560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849019,Europaweg,28,94.91664,1545.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7301808,Provincialeweg,27,41.833332,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6864719,Pleijweg,27,25.0,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_118909906,Coentunnelweg,26,99.75,315.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_418363824,Gaasperdammerweg,26,96.333336,1422.857142857142857142857143
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7374873,Ringweg-Zuid,26,40.0,1515.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6864552,Europaweg,26,11.0,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092410199,Rijksweg,25,81.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6633792,Provincialeweg,25,74.83337,860.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_23389486,Oostkanaalweg,25,67.83337,1040.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7044785,Ringweg-Oost,25,90.034424,1214.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_494763910,Ringweg-Noord,25,90.07875,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1014914605,Europaweg,25,50.505993,924.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1202023154,Europaweg,25,45.0,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6881888,Nijmeegseweg,25,82.666664,1150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7080538,Helvoirtseweg,24,69.587326,352.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_361263625,Mattemburghweg,24,7.0,274.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_64223642,Oldegaarde,24,50.0,1020.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6916499,Maas en Waalweg,24,82.40001,518.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_226297135,Middelweg,24,73.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_39911405,Ringweg-Noord,24,18.5,900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_801336195,Rijksweg,23,67.59998,504.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_127271573,Graafsebaan,23,55.14286,908.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_140381925,Havenpoortweg,23,41.0,1080.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_82053483,Bosscheweg,23,81.25,870.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1347766568,Zelderseweg,23,58.666656,380.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_93701462,Hereweg,23,48.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6760595,Napoleonsweg Zuid,23,70.20833,575.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7558957,Groene Kruisweg,23,82.80002,216.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092339683,Nieuwe Haagseweg,23,100.0,1410.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7044096,Ringweg-Oost,23,107.49891,640.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509603429,Linkermaasoeverweg,23,88.5,1515.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850904,Verlengde Arnhemseweg,22,75.0,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_84506902,Eperweg,22,73.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6788304,Doetinchemseweg,22,82.33333,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6856454,Tatelaarweg,22,47.125,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7403580,Rijksweg,22,72.40002,432.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_112246480,Nieuwe Hoefweg,22,59.458336,565.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7467809,Utrechtsebaan,22,78.33333,610.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491581474,Ringweg-West,21,71.5,852.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7253849,Zoomweg-Zuid,21,30.625,405.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6863522,IJsseloordweg,21,72.95783,641.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6583101,Medemblikkerweg,21,80.25,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6923052,Cuneraweg,21,71.0,630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_169499814,Provinciale weg,21,70.75,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_148351247,Nieuweweg,21,59.5,1080.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_232321352,Hartelweg,21,82.80001,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7370151,Ringweg-Zuid,21,81.25,1485.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6884363,Slenkweg,21,75.15266,1142.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_378883937,Maasroute,20,62.333332,700.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_221205619,Ringweg-West,20,9.583334,327.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_159921743,Laan op Zuid,20,39.200005,336.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6712282,Sevenumsedijk,20,80.79164,545.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_287708622,Oosttangent Noord,20,68.166664,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6642406,Karel Doormanweg,20,82.66664,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7074028,Heeswijk,20,61.375,305.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092353924,Coentunnelweg,20,37.5,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7382977,Ringweg-West,20,27.5,975.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7042478,Ringweg-Noord,20,94.33335,1560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_274383441,Ringweg-Oost,20,101.5,1035.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7368906,Ringweg-Zuid,20,34.666668,1360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850637,Slenkweg,20,6.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6616650,Rijksweg,19,84.83336,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7112518,Maasroute,19,28.285711,754.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6600976,Provincialeweg,19,82.19999,528.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43661252,Poot van Metz,19,93.75,1125.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_821959208,Gaasperdammerweg,19,82.33334,920.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1359663062,Ringweg-Zuid,19,77.40001,1656.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381713,Ringweg-Zuid,19,34.200005,1284.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381814,Ringweg-West,19,35.76214,488.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7382664,Ringweg-West,19,75.66666,920.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_987119484,Europaweg,18,96.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509335229,Europaweg,18,94.85715,685.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_24584038,Wâldwei,18,108.0,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6846595,Elspeterweg,18,58.166668,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6875797,Pleijweg,18,75.952385,1200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6724604,Peelweg,18,61.0,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_70330189,Wippolderlaan,18,73.5,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7385246,Nieuwe Haagseweg,18,95.59998,1164.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7382990,Ringweg-West,18,77.0,1220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_51697177,Utrechtsebaan,18,79.0,1740.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849043,Delhuijzenweg,18,98.629395,1150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6877057,Nijmeegseweg,18,20.666664,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7376556,Ringweg-Noord,18,98.666664,1740.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7530598,Beukelsdijk,17,37.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6552392,Oostvaardersdijk,17,94.5,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6551999,Markerwaarddijk,17,98.125,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6734078,Venloseweg,17,77.833336,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_185105293,Amsterdamseweg,17,76.25,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231490004,Drie Merenweg,17,89.833336,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_112246539,Hogeveenseweg,17,67.875,565.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_126434579,Oostweg,17,77.40001,528.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_50323375,Postkoetsweg,17,88.5,1800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_42556560,Poot van Metz,17,97.0,1365.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510856406,Coentunnelweg,17,99.66666,850.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7044098,Ringweg-Oost,17,98.07038,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1094514630,Europaweg,17,32.75,945.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6865082,Europaweg,17,17.623331,773.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6835646,Delhuijzenweg,17,46.055553,1176.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_385253144,Linkermaasoeverweg,17,29.5,1230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_72004744,Europaweg,16,95.161644,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231599885,Dammenweg,16,78.75,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_243148213,Rijksweg,16,79.5,810.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7311076,Algeraweg,16,11.166667,460.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_603792180,Hogering,16,77.5,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_320192649,De Voortse Ring,16,81.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6847351,Zuiderzeestraatweg West,16,77.666664,350.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_148105254,Schipholweg,16,73.0,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6600962,Provincialeweg,16,85.85714,1131.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7065545,Meerndijk,16,65.5,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1182409942,Straatweg,16,60.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_398814016,Laagravenseweg,16,36.5,735.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7377835,Coentunnelweg,16,102.0,990.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381722,Ringweg-Zuid,16,42.200005,1344.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6864544,Europaweg,16,8.722223,656.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7302629,Rijksweg,16,108.82163,1051.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6835983,Delhuijzenweg,16,51.053818,924.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_481434587,Twenteroute,15,86.0,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6847404,Zuiderzeestraatweg West,15,39.666664,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6456924,Friesestraatweg,15,69.75,705.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6735663,Roermondseweg,15,71.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_31909964,Oosttangent Noord,15,57.333324,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1034879251,Weg der Verenigde Naties,15,76.83621,1065.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_374810604,Gaasperdammerweg,15,89.666664,900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7042490,Ringweg-Noord,15,14.333331,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_30985187,Ringweg-Zuid,15,46.0,1416.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38524672,Ringweg-Noord,15,100.33334,1360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1331091273,Ringweg-West,15,16.25,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_459053702,Europaweg,15,104.0,930.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_34379704,Burgemeester Elsenweg,15,82.953964,928.571428571428571428571429
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509670753,Europaweg,15,99.81499,405.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1096119818,Rijksweg,15,40.0,1560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_495535096,Ringweg-Oost,15,97.16941,890.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321714900,Rijksweg,14,99.42858,617.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_576462705,Twenteroute,14,77.75,630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092843371,Waalhavenweg,14,49.0,80.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6525227,Spijkweg,14,87.0,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848700,Meervelderweg,14,77.0,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_472045301,Provincialeweg,14,83.166664,650.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6862905,IJsseloordweg,14,37.06226,436.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6798119,Zutphenseweg,14,70.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6823291,Deventerweg,14,76.5,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6619182,Nollenweg,14,66.83333,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_35329414,Vreelandseweg,14,67.833336,1060.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6606420,Vaartdijk,14,76.5,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6588138,Zeedijk,14,69.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6924709,Lijnweg,14,40.833336,460.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38145604,Provincialeweg,14,43.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7163557,Postkoetsweg,14,95.875,1770.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1094714887,Rijksweg,14,102.666664,1280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43992359,Poot van Metz,14,94.666664,1550.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7385248,Nieuwe Haagseweg,14,99.5,1372.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7040863,Ringweg-Noord,14,30.499996,1070.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381737,Ringweg-West,14,30.0,915.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1270172389,Ringweg-West,14,73.5,1125.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48748939,Ringweg-West,14,80.25,705.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_128965109,Ringweg-West,14,20.194445,321.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_137473877,Utrechtsebaan,14,81.0,1340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_511168727,Velsertunnelweg Noord,14,86.0,1650.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848989,Delhuijzenweg,14,16.208334,395.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6863564,Europaweg,14,103.63208,625.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6495478,Rijksweg,13,105.40002,1200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7587367,Provincialeweg,13,80.0,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_801336196,Rijksweg,13,82.5,372.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_315069719,Hillelaan,13,36.200005,192.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6891368,Wezelpad,13,93.14286,634.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1293093932,Urmonderbaan,13,62.599995,552.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_392038281,Biltseweg,13,61.333336,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_310874777,Nieuweweg,13,37.499992,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_536874871,Galgeweg,13,57.666664,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_34886847,Beneluxweg,13,24.375,1095.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_377542464,Gaasperdammerweg,13,101.619316,494.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_968847007,Burgemeester van Sonweg,13,97.333336,1760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7376543,Ringweg-Noord,13,97.0,1720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7374415,Ringweg-Zuid,13,29.399996,960.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1270145698,Ringweg-West,13,71.5,1365.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1269104014,Ringweg-West,13,77.0,1520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491592275,Ringweg-West,13,78.40001,576.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849018,Europaweg,13,89.33333,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_340969807,Utrechtsebaan,13,70.5,1110.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_790040606,Velsertunnelweg Zuid,13,84.0,1575.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850979,Slenkweg,13,91.17334,690.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_41723226,Postkoetsweg,13,104.27125,880.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7380447,Haarlemmerweg,12,21.800001,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6474617,Opper Haudmare,12,108.0,384.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6810083,Heinoseweg,12,63.25,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1416123073,Westblaak,12,28.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_59972010,Molenlaan,12,45.83334,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1098192940,Stadionweg,12,50.5,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7326943,Kreekhuizenlaan,12,50.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6605149,Provincialeweg,12,56.5,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_186956895,Europaweg,12,102.949646,738.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6512360,Zuiderzeestraatweg,12,72.0,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6835562,Arnhemseweg,12,64.0,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6960747,Scherpenzeelseweg,12,83.16669,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6780606,Dinxperlosestraatweg,12,69.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6393119,Griffeweg,12,42.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6718688,Bosserheide,12,75.666664,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142960728,Oude Rijksweg Zuid,12,69.083336,335.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_605082423,Westfrisiaweg,12,109.5,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7366374,Schipholweg,12,69.200005,408.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6688483,Haaksbergerstraat,12,76.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_140266705,Mijdrechtse Zuwe,12,61.16667,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_379530009,Dolderseweg,12,68.83332,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7356209,Westkanaalweg,12,52.5,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7566705,Middel Broekweg,12,45.666668,700.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1094536106,Verbindingsasje,12,78.16668,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_126434511,Katwijkerlaan,12,57.0,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1094714885,Rijksweg,12,103.5,1630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_45032716,Postkoetsweg,12,29.333334,1230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43992357,Poot van Metz,12,92.5,1530.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48595710,Westrandweg,12,105.253334,830.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_196700328,Westrandweg,12,101.786705,1100.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_527339457,Weg der Verenigde Naties,12,105.156654,900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6596581,Coentunnelweg,12,100.60429,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1148037322,Burgemeester van Sonweg,12,96.0,1360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491586081,Ringweg-West,12,69.75,1290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7377786,Ringweg-Noord,12,87.0,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7370150,Ringweg-Zuid,12,34.0,1275.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7374430,Ringweg-Zuid,12,28.399996,1044.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6879065,Europaweg,12,22.881256,855.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6864551,Europaweg,12,95.833336,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_462439829,Burgemeester Elsenweg,12,90.78731,1102.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6875795,Pleijweg,12,75.0,1320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7371022,IJ-tunnel,11,84.0,432.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7045317,Ringweg-Oost,11,103.9197,800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142505268,Heilooër Tolweg,11,21.800001,912.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6641721,Karel Doormanweg,11,78.0,680.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7615607,Hoofdweg,11,90.33332,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7589384,Nieuwe Koolweg,11,45.33333,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_80663872,Rondweg,11,88.0,680.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031260,Rondweg,11,47.153843,498.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7518063,Mathenesserweg,11,30.0,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_426561320,Olympiaweg,11,49.333336,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_173244283,Oldegaarde,11,45.33334,760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7516521,Zuiderparkweg,11,48.20001,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6605152,Provincialeweg,11,59.16667,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_532071203,Waterlandseweg,11,97.59998,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6973084,Gooiseweg,11,105.2,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_307581798,Stellingenweg,11,74.5,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031794,Westergoawei,11,76.0,810.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6795429,Ruurloseweg,11,82.0,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_327545089,Houtwijkerweg,11,77.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6963967,Leuvenumseweg,11,78.0,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6456112,Siersteenlaan,11,41.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_107176928,Friesestraatweg,11,68.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_806560484,Sontweg,11,40.0,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6724609,Deurneseweg,11,77.833336,245.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6756960,Maaseikerweg,11,64.333336,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_683982376,Drie Merenweg,11,95.59998,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142046798,Westfrisiaweg,11,108.33333,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6571254,Slootweg,11,77.0,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6583799,Schagerweg,11,81.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_584460756,Tonnendijk,11,80.833336,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6985556,Bunschoterstraat,11,77.799995,288.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7449218,Voorschoterweg,11,50.5,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_126096712,Postkoetsweg,11,23.75,1125.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_730222449,Weg der Verenigde Naties,11,79.30585,1030.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510856400,Coentunnelweg,11,31.0,810.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1159241645,Burgemeester van Sonweg,11,96.33333,1900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092348212,Ringweg-Noord,11,96.5,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7042507,Ringweg-Noord,11,27.500002,1150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7044053,Ringweg-Oost,11,103.0,1020.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7376764,Ringweg-Noord,11,45.75,675.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_197790010,Utrechtsebaan,11,73.91668,445.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_722476368,Beneluxweg,11,83.24915,685.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1014914604,Delhuijzenweg,11,28.0,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6849033,Delhuijzenweg,11,39.666676,610.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7474886,Utrechtsebaan,10,81.55555,306.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_601761333,Rijksstraatweg,10,37.666664,880.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_252715496,Eindhovenseweg,10,98.16667,920.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_209015303,Graafsebaan,10,57.0,576.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6719640,Venloseweg,10,90.83333,960.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_584005688,Twenteroute,10,85.66667,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7526616,Schieweg,10,37.200005,432.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7523373,Goudsesingel,10,48.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_315069732,Schiedamsedijk,10,34.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_124046548,Algeraweg,10,57.0,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6966996,Larserweg,10,106.71428,265.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_442358103,Sintrale As,10,103.66667,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6877061,Nijmeegseweg,10,82.38889,1003.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6881064,Amsterdamseweg,10,86.40001,288.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_348380444,Pleijweg,10,13.722222,766.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6786548,Beekseweg,10,82.83332,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6866956,Botsestraat,10,79.83332,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6393138,Europaweg,10,47.5,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6722326,Deurneseweg,10,73.708336,475.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_273272832,Hasseltsebaan,10,54.833332,800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6730012,Rijksweg,10,56.666664,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6619165,Nollenweg,10,70.16667,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7051770,Burgemeester Stramanweg,10,76.000015,380.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_737262396,Braken,10,74.33333,335.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6589236,Middenweg,10,74.833336,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_973514095,Lageweg,10,79.083336,265.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6996686,Amsterdamsestraatweg,10,68.66667,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7005698,Universiteitsweg,10,54.5,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_30746750,Maasdijk,10,70.49999,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7279609,Provincialeweg Oost,10,60.333336,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_145018530,Provincialeweg,10,56.625,435.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_965652334,Nieuwe Utrechtseweg,10,105.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7385176,Nieuwe Haagseweg,10,107.0,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_494281998,Coentunnelweg,10,18.0,816.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38524670,Ringweg-Noord,10,46.333336,1320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7041282,Ringweg-Noord,10,45.0,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_293658315,Ringweg-West,10,90.5,1042.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7046927,Ringweg-Oost,10,89.971855,749.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7379509,Ringweg-West,10,73.75,915.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7376765,Ringweg-Noord,10,102.33333,1000.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6632519,Velsertunnelweg Noord,10,84.0,1080.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1063511081,Julianaweg,10,84.0,1000.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6835997,Delhuijzenweg,10,47.666664,1180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_52833148,Amsterdamsevaart,9,85.166664,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1148037318,Burgemeester van Sonweg,9,81.16667,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6397863,Julianaweg,9,36.666668,1060.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_722426341,De Heak,9,93.71429,454.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_619503045,Rijksstraatweg,9,78.666664,1000.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7592667,Provincialeweg,9,76.666664,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231601307,Dammenweg,9,83.25,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231600939,Dammenweg,9,95.66667,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_952548922,Rijksweg,9,50.333336,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7594412,Serooskerkseweg,9,84.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_93308909,De Heak,9,96.28571,737.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6474631,Opper Haudmare,9,110.0,528.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6567111,Afsluitdijk,9,96.83333,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1387206082,Rijksweg,9,98.200005,696.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092927218,Rijksweg,9,91.5,435.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_16310753,Bedrijvenparksingel,9,85.42858,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7532212,Tjalklaan,9,43.333336,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_315069727,Schiedamsedijk,9,50.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_691245385,Straatweg,9,40.333332,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48400943,Kreekhuizenlaan,9,44.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_314182270,Beijerlandselaan,9,17.0,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7327147,Pascalweg,9,41.333332,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6964209,Harderdijk,9,74.66667,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6545036,Urkerweg,9,87.33333,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6479904,Rykswei,9,80.33334,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_695733680,Lauwersseewei,9,71.0,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6905609,Wezelpad,9,112.40001,456.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6962023,Rijksweg,9,81.70833,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6971443,Berencamperweg,9,72.166664,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6788701,Kruisbergseweg,9,81.0,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6789912,Keppelseweg,9,70.0,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6784374,Terborgseweg,9,79.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142796808,Afsluitdijk,9,74.333336,70.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6824116,Leestense Rondweg,9,80.125,385.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_114389350,Vredenseweg,9,72.0,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6883646,Valburgseweg,9,57.5,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_380875520,Nijmeegsebaan,9,78.0,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_132315029,Eemshavenweg,9,87.66668,1040.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6729995,Napoleonsweg,9,68.5,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6711476,Rijksweg,9,78.50001,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_238840548,Rijksweg Zuid,9,72.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_164242554,Wilhelminasingel,9,62.0,617.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_139135390,Langereweg,9,56.71429,497.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142912469,Rijksweg,9,54.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_45855019,Legmeerdijk,9,71.0,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7367250,Bosrandweg,9,65.333336,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6604480,Westdijk,9,87.166664,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321521679,Westfrisiaweg,9,105.0,1040.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6588797,Provincialeweg,9,83.16667,310.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6660174,Hengelosestraat,9,65.50001,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_104110719,Bunschoterstraat,9,75.799995,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6985764,Amersfoortseweg,9,62.291668,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_973609079,Zeisterweg,9,74.5,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_169496865,Provincialeweg,9,61.04166,645.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_450234826,Provincialeweg,9,75.799995,456.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7506364,Kwakscheweg,9,72.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_203125288,Wateringseweg,9,58.5,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7532242,Horvathweg,9,43.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_309906850,Rijksweg,9,103.444405,1686.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7173935,Rijksweg,9,101.66667,1340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43680915,Poot van Metz,9,93.0,1530.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1359663068,Nieuwe Haagseweg,9,71.0,1225.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1029255727,Weg der Verenigde Naties,9,95.427124,1340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_802595690,Weg der Verenigde Naties,9,99.49998,860.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1322363220,Burgemeester van Sonweg,9,91.0,850.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381819,Ringweg-West,9,54.0,1110.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7042483,Ringweg-Noord,9,100.66667,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_741001785,Ringweg-Oost,9,104.0,940.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_51697203,Utrechtsebaan,9,75.200005,708.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_526999821,Europaweg,9,28.267075,952.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_306290835,Europaweg,9,11.0,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_127443314,Rijksweg,9,89.52048,1262.222222222222222222222222
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_790039325,Velsertunnelweg Zuid,9,71.0,1620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509661872,Slenkweg,9,29.5,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_363144501,Michiel de Ruijtertunnel,8,46.5,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6625028,Rijksweg,8,80.0,1200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_277217362,Heilooër Tolweg,8,42.2,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_722158309,Oost-westweg,8,73.875,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7079675,Linkermaasoeverweg,8,105.625,630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_459236003,Middenweg,8,107.200005,264.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6808209,Nijverdalseweg,8,69.30556,546.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_355556434,Heinoseweg,8,28.0,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1259539344,President Rooseveltweg,8,39.666668,640.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_130303156,Kralingse Zoom,8,44.5,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7330162,Molenvliet,8,44.333332,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7553792,Marathonweg,8,53.0,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_293787931,Provincialeweg,8,73.166664,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6598936,Albert Heijnweg,8,61.5,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6971622,Nijkerkerweg,8,97.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_28390525,Strjitwei,8,74.333336,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6905626,Wezelpad,8,106.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6976191,Barneveldseweg,8,61.375,435.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6969445,Putterweg,8,72.5,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6520902,Zuiderzeestraatweg Oost,8,67.33333,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6899629,Graafseweg,8,82.66667,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_659392999,Pleijweg,8,73.2619,1240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6857602,Zevenaarseweg,8,80.125,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_25921871,Terwoldseweg,8,78.0,250.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6846232,Eperweg,8,88.0,80.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7081800,Provincialeweg,8,55.5,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6936917,Tielseweg,8,57.5,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_27390757,Rijksweg,8,55.666668,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6455331,Plataanlaan,8,76.5,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6397240,Eendrachtskade,8,37.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_305878598,Maastrichterlaan,8,40.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6774310,Urmonderbaan,8,85.0,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6760789,Napoleonsweg Noord,8,72.091675,283.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142505284,Nollenweg,8,56.0,740.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231430222,Weg om de Noord,8,84.200005,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1011501893,Legmeerdijk,8,50.857143,377.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_293987292,Westerweg,8,80.833336,690.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_432689777,Rozenburgdreef,8,81.57142,428.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_590084462,Provincialeweg,8,92.83333,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_553562551,Westfrisiaweg,8,105.0,860.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_706917557,Westfrisiaweg,8,67.33333,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6572839,Drechterlandseweg,8,80.0,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_737296508,Westerweg,8,13.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7041894,Slochterweg,8,13.333334,640.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6659445,Oldenzaalsestraat,8,62.166656,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_543500894,Weerseloseweg,8,73.0,830.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6985553,Bunschoterstraat,8,64.200005,336.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092888670,Amsterdamsestraatweg,8,52.399998,696.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6998108,Amsterdamsestraatweg,8,46.625,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1187361473,Utrechtseweg,8,73.291664,310.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6988281,Geeresteinselaan,8,71.16667,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6989390,Langbroekerweg,8,61.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_462544272,Zeisterweg,8,70.166664,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6990086,Driebergsestraatweg,8,50.0,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_143383945,Utrechtseweg,8,54.166664,710.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38236033,Hoekeindseweg,8,21.0,620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7313741,Overbuurtseweg,8,59.666664,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_49697540,Hoefweg,8,71.0,274.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_407479723,Provincialeweg,8,68.00001,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_161539418,Provincialeweg,8,70.83333,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7581619,Tonisseweg,8,83.666664,490.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_117531201,De Westlandroute,8,69.75,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_312331648,Woudseweg,8,74.625,525.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_146411523,Kruisweg,8,95.5,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_255567295,Kruithuisweg,8,66.85714,651.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_721901500,Poot van Metz,8,95.40165,953.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_502841183,Poot van Metz,8,56.333336,980.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509498194,Rijksweg,8,109.0,1180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_45122595,Poot van Metz,8,92.0,1620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7168852,Poot van Metz,8,100.5,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7385169,Nieuwe Haagseweg,8,97.25,1305.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1190841568,Nieuwe Haagseweg,8,93.40001,1248.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48595707,Westrandweg,8,95.02015,1365.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_650156403,Westrandweg,8,100.4152,680.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1258974415,Weg der Verenigde Naties,8,74.0,1575.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142492281,Beneluxweg,8,81.21171,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142492425,Weg der Verenigde Naties,8,92.75,675.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7366404,Burgemeester van Sonweg,8,93.33333,2080.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_593062896,Ringweg-West,8,7.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7377863,Ringweg-Noord,8,93.5,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7381738,Ringweg-West,8,72.85889,1253.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_489140280,Ringweg-West,8,72.0,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_497270582,Europaweg,8,97.333336,1300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6863557,Europaweg,8,87.5,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_129274398,Utrechtsebaan,8,71.5,1090.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_469675193,Europaweg,8,67.666664,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6879035,Europaweg,8,93.28801,528.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_790040603,Velsertunnelweg Zuid,8,79.0,1620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_893094921,Rijksstraatweg,8,94.25,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6850981,Slenkweg,8,22.0,1020.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_49427621,Graafsebaan,8,98.33333,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_885132468,Pleijweg,8,66.5,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6875476,Pleijweg,8,8.5,930.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7371026,IJ-tunnel,7,66.5,350.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1409277636,Zoetermeerse Rijweg,7,43.625,225.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6571312,Rijksstraatweg,7,83.33333,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142505276,Martin Luther Kingweg,7,72.5,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_507306397,Middenweg,7,95.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231600937,Dammenweg,7,94.0,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7120081,Maasroute,7,102.16667,760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6690365,Europaweg,7,74.375,345.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_355556436,Heinoseweg,7,30.833332,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6695931,Europaweg,7,75.666664,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_584171442,Nieuwe Heinoseweg,7,93.83333,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48275861,Tjalklaan,7,45.799995,672.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7518118,Vierhavensstraat,7,37.333332,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_314449723,Schiekade,7,44.333336,80.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7328007,John F. Kennedyweg,7,35.666668,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_723327128,Spinozaweg,7,60.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7512326,Oldegaarde,7,46.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_512371237,Pleinweg,7,40.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1264633857,Pleinweg,7,11.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321883654,Boezemweg,7,39.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_130206175,Westzeedijk,7,52.5,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_151879323,Clydeweg,7,86.59999,216.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_59306647,Vondelingenweg,7,85.5,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7552173,Vondelingenweg,7,62.0,110.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_232023340,Maasvlakteweg,7,83.666664,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_493209775,Gooiseweg,7,95.5,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6517213,Vollenhoverweg,7,81.333336,170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_603760641,Hogering,7,78.85714,857.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_640800152,Gooiseweg,7,100.59999,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_22718426,Koaibosk,7,81.83333,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6465579,Scheiding,7,75.5,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6905623,Wezelpad,7,81.9,204.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_162738718,Renswoudseweg,7,83.0,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_28116835,Europaweg,7,74.6,312.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6963937,Hogesteeg,7,77.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848670,Nunspeterweg,7,67.83333,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6694474,Rondweg West,7,62.16666,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_607471323,Zutphenseweg,7,75.83333,160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6794956,Borculoseweg,7,70.5,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_456822441,Provincialeweg,7,77.0,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6931618,Zwarte Paard,7,77.666664,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38572355,Peizerweg,7,44.5,230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_226997931,Petrus Campersingel,7,47.333336,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6398392,Rijksstraatweg,7,47.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6391066,Rijksstraatweg,7,44.5,310.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6714449,Napoleonsweg,7,77.66667,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6741040,Echterbaan,7,61.125,855.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_347320416,Emmaberg,7,64.0,550.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7138711,Kempenweg,7,80.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142894814,Provincialeweg,7,79.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7124076,Maasboulevard,7,49.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_280840955,Leimuiderweg,7,89.0,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7037162,Gooilandseweg,7,83.5,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_432689778,Rozenburgdreef,7,82.85714,394.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_621279304,Kamerlingh Onnesweg,7,77.0,830.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6610663,Provincialeweg,7,99.333336,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_739844038,Kruisweg,7,55.333336,693.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7391019,Legmeerdijk,7,44.33334,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6804855,Ommerweg,7,79.5,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_537819785,Nieuwe Deventerweg,7,67.5,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6683598,Rijssensestraat,7,79.83333,800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_397757851,Coevorderweg,7,63.833336,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6510587,Zwolseweg,7,83.5,770.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7064749,Weg der Verenigde Naties,7,75.0,306.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_981352659,M A Reinaldaweg,7,66.83333,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6922484,Nude,7,75.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_245086589,Arnhemseweg,7,57.833332,640.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6932499,Cotherweg,7,61.75,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6995171,Van Weerden Poelmanweg,7,59.0,490.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_451791810,Herenweg,7,89.33333,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7567054,Burgemeester Elsenweg,7,44.75,675.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_84051471,Provincialeweg,7,70.125,230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7582025,Langeweg,7,82.0,670.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_143374396,Spuidijk,7,80.0,310.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7558953,Groene Kruisweg,7,90.33333,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_301689487,Groene Kruisweg,7,71.16666,670.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_437962946,1e Tochtweg,7,64.25,465.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_366171477,Jacoba van Beierenweg,7,59.5,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_126548693,Kruithuisweg,7,82.200005,336.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_134992806,Kanaaldijk West,7,84.0,740.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_311002839,Dierensteinweg,7,45.833336,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509498193,Rijksweg,7,106.88889,1050.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43584256,Poot van Metz,7,96.75,1485.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1354023396,Nieuwe Haagseweg,7,92.90669,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48595712,Westrandweg,7,105.5,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491590646,Westrandweg,7,23.0,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1316534026,Weg der Verenigde Naties,7,103.0,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1040358409,Weg der Verenigde Naties,7,83.252235,906.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6393209,Beneluxweg,7,81.5,1500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_139186359,Coentunnelweg,7,98.0,860.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510856418,Coentunnelweg,7,90.66667,320.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_409314340,Gaasperdammerweg,7,101.78333,329.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1321677487,Burgemeester van Sonweg,7,103.75,1245.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_741001784,Ringweg-Oost,7,93.5,1524.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7379525,Ringweg-West,7,74.5,645.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_75928702,Ringweg-West,7,63.25,1296.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_888281286,Utrechtsebaan,7,75.0,795.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_976741994,Julianaweg,7,85.75,915.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848724,Delhuijzenweg,7,49.5,1140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_482551385,Delhuijzenweg,7,11.0,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6879038,Delhuijzenweg,7,88.0,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6881900,Nijmeegseweg,7,97.5,1440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6881891,Nijmeegseweg,7,86.0,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_881598487,Landscheidingsweg,6,71.5,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_83203518,Wâldwei,6,106.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6456546,Weg der Verenigde Naties,6,87.28571,1251.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_117694246,Beneluxweg,6,80.8,804.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_385253145,Linkermaasoeverweg,6,88.28571,900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_383342709,Kraaijensteinweg,6,61.16667,460.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7592685,Provincialeweg,6,57.75,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031234,Rondweg,6,97.77778,533.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031237,Rondweg,6,100.85714,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509600701,Maasroute,6,95.28571,737.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_549737046,Maasroute,6,96.875,435.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_374427018,Linkermaasoeverweg,6,99.0,514.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031270,Rondweg,6,76.28571,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_45832213,Zijdeweg,6,28.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_117425828,Afsluitdijk,6,109.6,396.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7525983,Schiekade,6,37.0,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_48244691,Westblaak,6,33.57143,274.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_315069717,Hillelaan,6,28.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_723328163,Vaanweg,6,56.857143,445.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_122011837,Brandingdijk,6,47.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6966561,Harderbosweg,6,80.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6542866,Biddingweg,6,102.0,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_532716677,Waterlandseweg,6,88.833336,620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_600897819,Kuinderweg,6,79.83334,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_731557355,Overijsselseweg,6,75.25,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_695733530,Lemmerweg,6,72.833336,430.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6484202,Rijksstraatweg,6,102.57142,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_439425721,Sintrale As,6,103.333336,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_167189358,Opper Haudmare,6,92.57142,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6881071,Amsterdamseweg,6,79.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6922489,Lawickse Allee,6,75.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6826218,Ellecomsedijk,6,70.375,525.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6781604,Varsseveldsestraatweg,6,81.666664,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6818752,Zutphenseweg,6,80.166664,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6798876,Ruurloseweg,6,71.166664,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_674431673,Van Heemstraweg,6,72.75,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7098037,Provincialeweg West,6,73.33334,530.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6829491,Zutphensestraat,6,83.6,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6968787,Nijkerkerstraat,6,64.708336,410.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_967016638,Wesselseweg,6,78.083336,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6860632,Oostsingel,6,72.333336,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7101436,Graaf Reinaldweg,6,88.5,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6456089,Siersteenlaan,6,38.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142492383,Plataanlaan,6,75.14286,377.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1376169041,Laan Corpus den Hoorn,6,38.0,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_792230761,Hoendiep,6,37.0,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_144105867,Laan Corpus den Hoorn,6,48.0,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_376686978,Beneluxweg,6,76.44445,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_239765039,Beneluxweg,6,78.666664,573.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6390724,Rijksstraatweg,6,51.5,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6731440,Kanaaldijk,6,76.08334,405.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_176835038,Middenweg,6,75.16666,880.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_139135416,Op de Baan,6,72.16666,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_573190463,Vonderen,6,54.625,380.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_356639765,Midden Peelweg,6,76.5,550.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1088190498,Keulseweg,6,95.85714,514.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_28721712,Gelders Eind,6,86.166664,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7406180,Kruisweg,6,85.4,192.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7406175,Kruisweg,6,91.166664,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_385047573,Leimuiderweg,6,76.0,288.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6606610,Provincialeweg,6,86.0,400.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6608548,Ned Benedictweg,6,54.333332,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7389992,IJweg,6,78.0,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_458735160,Westfrisiaweg,6,94.666664,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6616640,Provincialeweg,6,77.5,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7002573,Vreelandseweg,6,60.66666,740.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_50318085,Ommering,6,82.0,908.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_358267971,Provincialeweg,6,66.666664,230.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6616874,Zuidschinkeldijk,6,79.0,255.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6510057,Kamperzeedijk,6,74.333336,550.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7349946,M A Reinaldaweg,6,48.16666,520.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7064752,Weg der Verenigde Naties,6,61.125,750.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6975223,Stationsweg Oost,6,42.16667,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6988282,Arnhemseweg,6,59.999996,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_178663871,Weg der Verenigde Naties,6,79.66666,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6996687,Amsterdamsestraatweg,6,67.5,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_173567354,Europaweg,6,65.14286,497.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_150370721,Alphenseweg,6,67.333336,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_45781389,Leeuwenakkerweg,6,54.833332,665.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_151912935,M.A. Reinaldaweg,6,56.5,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7573507,Noordlandseweg,6,54.666668,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7344176,Kiltunnelweg,6,80.200005,192.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_363238342,Groene Kruisweg Oost,6,76.16666,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_52099307,Provincialeweg,6,84.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7287137,Schoonenburgweg,6,76.83334,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_107944490,Middenpolderweg,6,81.5,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7517402,Groene Kruisweg,6,74.0,456.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7570904,Maasdijk,6,68.5,630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_120471410,Jan Thijssenweg,6,31.666672,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_947310927,Rijksweg,6,100.666664,1760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_306695385,Postkoetsweg,6,91.666664,1860.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_59302851,Beneluxweg,6,53.8,1620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_730222455,Weg der Verenigde Naties,6,77.75,1365.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1209358129,Beneluxweg,6,91.666664,760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142492427,Weg der Verenigde Naties,6,86.0,880.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_494764662,Coentunnelweg,6,101.666664,850.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_438281024,Gaasperdammerweg,6,104.40033,1038.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_499557550,Gaasperdammerweg,6,97.1628,1030.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_493246921,Gaasperdammerweg,6,92.0,1260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7379198,Ringweg-West,6,93.75,675.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7377807,Ringweg-Noord,6,87.5,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_706993022,Ringweg-Zuid,6,39.600002,1404.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7377780,Ringweg-Noord,6,112.5,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_129274405,Utrechtsebaan,6,66.5,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6848721,Europaweg,6,61.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_469675191,Europaweg,6,78.55556,573.333333333333333333333333
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092202420,Europaweg,6,5.0,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_202733200,Europaweg,6,70.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_907794077,Europaweg,6,87.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7591896,Europaweg,6,123.5,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509505978,Rijksweg,6,89.51804,1116.666666666666666666666667
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_790040601,Velsertunnelweg Noord,6,94.5,1380.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1034879250,Julianaweg,6,73.0,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1328810091,Delhuijzenweg,6,77.0,1360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_333478750,Delhuijzenweg,6,88.24041,1092.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_319569938,Europaweg,6,92.66285,274.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_348380442,Pleijweg,6,69.0,870.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7080546,Linkermaasoeverweg,6,83.0,2130.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_491309364,Rijksweg,5,81.0,760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142505277,Martin Luther Kingweg,5,67.666664,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_93308907,De Heak,5,111.0,672.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510879544,De Heak,5,105.42857,377.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6644051,Rijksweg,5,81.375,455.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142685404,Stadsrondweg-Zuid,5,90.5,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_58693829,Haarlemmerweg,5,36.8,264.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1094752769,Venloseweg,5,104.333336,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6723471,Venloseweg,5,93.0,760.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_338851300,Hoofdweg,5,100.6,144.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_338935920,Middenweg,5,98.71429,222.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7592694,Serooskerkseweg,5,77.5,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7589822,Nieuwe Koolweg,5,50.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031263,Rondweg,5,74.375,405.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7340914,Rondweg,5,101.166664,660.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7338096,Rondweg,5,98.71429,514.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_320695509,Grote Beer,5,31.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1023627824,Europaweg,5,89.111115,253.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_344848840,Rijksweg,5,71.25,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_193002052,Grote Beer,5,56.0,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_509648549,Graafsebaan,5,95.333336,820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_294320720,Haarlemmerweg,5,83.42857,565.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_521589480,Twente-Route,5,83.833336,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6782053,Varsseveldseweg,5,78.333336,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_882973253,Twente-Route,5,56.0,102.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6782822,Twente-Route,5,37.142857,342.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6782831,Twente-Route,5,75.125,690.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_566672875,Twenteroute,5,96.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_576462702,Twenteroute,5,82.0,680.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_281276753,Almeloseweg,5,82.833336,425.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6782046,Varsseveldseweg,5,92.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_326125693,Nieuwe Heinoseweg,5,105.666664,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1377572728,Schiekade,5,38.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_635573699,Nieuwe Boezemstraat,5,15.625,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7319320,Kralingse Zoom,5,43.2,144.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7326002,IJsselmondse Randweg,5,59.6,336.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_300819780,Dordtselaan,5,14.833333,330.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7516073,Zuiderparkweg,5,44.166668,140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_850103982,Aveling,5,35.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_130303135,Bermweg,5,44.666664,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6597918,Kepplerstraat,5,40.333332,460.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_368174251,Cornelis Bruijnzeelweg,5,61.625,435.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6598987,Albert Heijnweg,5,54.833332,100.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7518811,Droogdokweg,5,60.0,80.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_231600936,Zwartedijk,5,80.5,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6967581,Gooiseweg,5,99.57143,908.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_87450681,Knardijk,5,84.83333,830.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7643923,Larserweg,5,102.2,504.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_605066833,Gooiseweg,5,90.8,168.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_724311975,Hogering,5,76.166664,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_191303324,Gooiseweg,5,104.4,672.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_453389214,Gooiseweg,5,85.166664,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1040977095,Knardijk,5,80.5,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_10502907,Blankendalwei,5,67.875,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_168353434,Sintrale As,5,103.0,291.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6537276,Lauwersseewei,5,88.83333,140.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_577585269,De Koaten,5,70.0,620.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6559884,Suderpolderwei,5,77.166664,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_799086619,Rijksweg,5,48.0,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_25770804,Koningsweg,5,58.166668,670.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6932043,Provincialeweg,5,80.00001,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_723349755,Maas en Waalweg,5,74.975006,456.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6869239,Nieuwe Rijksweg,5,80.75,630.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6858808,Ringbaan-Oost,5,50.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1247781093,Amersfoortseweg,5,78.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_54857057,Zutphensestraat,5,79.5,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1157156191,Goorseweg,5,80.75,255.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6821682,Den Elterweg,5,69.0,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6512349,Kamperstraatweg,5,32.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6688871,Haaksbergseweg,5,83.33334,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_385609845,Mansholtlaan,5,69.0,720.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_336955469,Zutphensestraatweg,5,65.666664,830.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_362791261,Deventerweg,5,53.666664,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6956572,Lage Valkseweg,5,85.5,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6792461,Keppelseweg,5,71.33333,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7098652,Graaf Reinaldweg,5,77.0,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7084847,Ammerzodenseweg,5,71.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_533474611,Noordzeeweg,5,76.0,560.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_398563282,Laan 1940-1945,5,77.5,678.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_144163440,Meerweg,5,61.333336,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_800501803,Stationsweg,5,33.0,145.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6708632,Napoleonsbaan Noord,5,65.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6735113,Randweg Zuid,5,60.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_32663987,Vonderen,5,60.333332,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6754610,Hornerweg,5,76.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_363725576,Wilhelminasingel,5,56.0,800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6711016,Venloseweg,5,61.375,305.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6714628,Roggelseweg,5,69.66667,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7127612,Peter Huyssenslaan,5,40.0,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_38839728,Meerssenerweg,5,43.5,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_327942237,Vogelenzangseweg,5,53.333336,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7393838,Leimuiderweg,5,65.333336,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_293976833,Westerweg,5,27.42857,651.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6618529,Schagerweg,5,80.2,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6618535,Schagerweg,5,81.28571,377.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7067508,Bloklaan,5,65.5,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6637356,Heereweg,5,47.0,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_216928138,Rijkerdreef,5,79.333336,640.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_605077133,Westfrisiaweg,5,91.53846,572.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_605077132,Westfrisiaweg,5,99.2,564.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142046797,Westfrisiaweg,5,104.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_142046810,Westfrisiaweg,5,108.666664,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6583360,Oude Provincialeweg,5,88.16667,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6584208,A.C. de Graafweg,5,82.33333,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_553241571,Kruisweg,5,63.25,555.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_375809522,Ommering,5,85.4,816.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6617535,Westerweg,5,88.0,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6606622,Provincialeweg,5,44.666668,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7041898,Slochterweg,5,84.5,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6620826,Kanaalweg,5,43.66667,470.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6508716,Zwartsluiserweg,5,78.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6508720,Zwartsluiserweg,5,80.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6447761,Nieuwe Dedemsvaartweg,5,75.166664,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_75616120,Geestdorp,5,63.5,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6988584,Leersumsestraatweg,5,57.0,260.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6987525,Maarsbergseweg,5,64.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_143383913,Amersfoortseweg,5,83.2,564.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510657073,Amersfoortseweg,5,86.4,168.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7007446,Biltsestraatweg,5,62.0,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6931370,Rijksstraatweg,5,62.666668,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_91898856,Zegerbaan,5,76.475,381.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7425842,Herenweg,5,79.333336,920.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_47853296,van Pallandtlaan,5,63.0,1080.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_108788706,Wippolderlaan,5,28.8,516.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_451921831,Provincialeweg,5,65.875,675.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_451734919,Rondweg,5,81.49999,340.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_986043931,Schielandweg,5,51.875,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_498310496,Zuidplasweg,5,62.5,1410.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7572382,Maasdijk,5,59.916664,570.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7356192,Blokland,5,77.5,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_328871574,Landscheidingsweg,5,88.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_724004844,Haarlemmertrekvaart,5,72.0,510.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_145044969,Voorweg,5,52.5,210.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_218039395,Trambaan,5,63.541668,335.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1242442606,Groene Kruisweg,5,54.272728,430.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_129510108,Wijkerlaan,5,20.0,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_899155247,Coldenhovelaan,5,45.375,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_533192206,Delftsestraatweg,5,57.0,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7560682,Vlaardingsedijk,5,64.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_487217351,Postkoetsweg,5,93.03769,932.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43661235,Poot van Metz,5,95.5,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_43580544,Poot van Metz,5,22.5,990.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_139713335,Westrandweg,5,102.80109,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1093145344,Oostzeeweg,5,95.0,1170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_510856390,Coentunnelweg,5,104.8,888.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092353923,Coentunnelweg,5,26.681818,850.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_499557549,Gaasperdammerweg,5,93.5,1530.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1306602455,Burgemeester van Sonweg,5,94.0,1440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1159241637,Burgemeester van Sonweg,5,96.444435,1820.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7376547,Ringweg-Noord,5,17.666666,960.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7368909,Ringweg-Zuid,5,93.666664,1800.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7379516,Ringweg-West,5,75.75,795.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_978868103,Ringweg-Noord,5,104.0,1460.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_389532446,Utrechtsebaan,5,71.25,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6879031,Europaweg,5,6.0,380.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7591880,Europaweg,5,75.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_730222347,Julianaweg,5,83.30082,580.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6879034,Delhuijzenweg,5,22.5,1020.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_944727315,Delhuijzenweg,5,93.5,1200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6703684,Europaweg,5,93.80572,222.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6876703,Pleijweg,5,67.5,900.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_574804811,Wezelpad,5,89.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_373974709,Linkermaasoeverweg,5,62.5,2160.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6616890,Rijksweg,4,79.0,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_298673861,Martin Luther Kingweg,4,70.0,750.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_321031271,Rondweg,4,97.75,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_507306395,Middenweg,4,105.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_285594279,Hoofdweg,4,109.0,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7585966,Rijksweg,4,79.0,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7590194,Dammenweg,4,99.666664,220.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7337048,Rondweg,4,96.71429,462.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1092410196,Rijksweg,4,73.833336,840.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7606312,Rijksweg,4,98.85714,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7592689,Provincialeweg,4,72.666664,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_208071785,Provincialeweg,4,75.625,810.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_128965107,Westrandweg,4,94.71429,454.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6909284,Graafsebaan,4,52.166668,1000.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1015011068,Delhuijzenweg,4,95.0,600.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_708252027,Europaweg,4,68.25,540.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_561351615,Twenteroute,4,88.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_123796053,G.K. van Hogendorpweg,4,79.0,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_675184111,Rochussenstraat,4,42.0,440.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7311889,Jacques Dutilhweg,4,45.666668,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7516089,Oldegaarde,4,44.0,960.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6598279,Heijermansstraat,4,43.333332,500.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6598296,Heijermansstraat,4,47.5,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1068456596,Oosterringweg,4,72.5,250.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_139880018,Oosterringweg,4,90.5,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_995947109,Oosterringweg,4,87.5,90.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6973051,Eemmeerdijk,4,91.333336,70.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6541613,Bremerbergweg,4,79.0,120.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6525283,Flevoweg,4,71.5625,477.5
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_532027649,Waterlandseweg,4,86.25,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_731557276,Overijsselseweg,4,103.333336,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_167311698,Sintrale As,4,101.2,480.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_167305453,Sintrale As,4,101.833336,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_28391071,Westergoawei,4,92.50001,360.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_846328672,Schoterlandseweg,4,60.666664,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6539896,Middelweg-Oost,4,80.0,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_232349506,Nieuweweg,4,50.5,150.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6466153,De Scheiding,4,66.33333,170.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6846259,Eperweg,4,82.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_164356821,Arnhemseweg,4,81.0,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6824109,Zutphen-Emmerikseweg,4,77.5,190.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6824381,Zutphen-Emmerikseweg,4,80.83333,390.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6798254,Zelhemseweg,4,81.5,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6694767,Groenloseweg,4,82.0,470.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6828014,Weg naar Voorst,4,66.75,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6826244,Ellecomsedijk,4,83.0,60.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_1327380132,Zutphensestraatweg,4,53.0,550.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6826692,Brummenseweg,4,66.5,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6826441,Eerbeekseweg,4,78.333336,180.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7085291,Bergsche Maasdijk,4,73.5,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6917023,Wageningsestraat,4,46.5,200.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_198719013,Damsterdiep,4,45.333332,290.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_569061575,Nijmeegseweg,4,63.0,420.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_250745767,Rijksweg,4,55.5,300.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6755760,Prinsenbaan,4,68.5,270.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6735117,Randweg Zuid,4,55.857143,205.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_7132681,Ringbaan Noord,4,73.2,384.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_727943048,Hasseltsebaan,4,63.375,780.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6725221,Ripseweg,4,77.166664,280.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6712250,Middenpeelweg,4,81.70833,450.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_337862041,Rijksweg,4,80.83333,240.0
+http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/road_6765735,Rijksweg,4,66.66667,600.0
