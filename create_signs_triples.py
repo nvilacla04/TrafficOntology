@@ -25,7 +25,7 @@ project_root = Path(os.environ.get("TRAFFIC_ONTOLOGY_PROJECT_ROOT", Path.cwd()))
 data_rdf_dir = project_root / "data_rdf"
 source_data_dir = project_root / "data_processed" / "traffic_signs_by_type_cleaned"
 osm_gpkg_file = project_root / "OSM_data_filtered.gpkg"
-output_ttl_file = data_rdf_dir / "traffic_signs.ttl" # Output file
+output_ttl_file = data_rdf_dir / "traffic_signs.ttl" 
 file_to_exclude = "traffic_signs_G13.csv"
 
 # Define Namespaces
@@ -34,7 +34,7 @@ INST = Namespace("http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/ins
 GEO = Namespace("http://www.opengis.net/ont/geosparql#")
 XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
 
-# --- Mappings (from your provided dictionary) ---
+# --- Mappings (from traffic signs dictionary) ---
 sign_meanings = {
     'A1': 'Speed limit', 'A2': 'End of speed limit', 'A3': 'Speed limit on electronic display',
     'A4': 'Recommended speed', 'A5': 'End of recommended speed',
@@ -99,7 +99,7 @@ def load_all_signs(directory: Path, exclude_file: str) -> pd.DataFrame:
     """Loads and combines all traffic sign CSVs from a directory."""
     print(f"Loading all CSVs from: {directory}")
     all_files = list(directory.glob("traffic_signs_*.csv"))
-    # Filter out the excluded file
+    # filter out the excluded file (we couldn't map it to a name)
     all_files = [f for f in all_files if f.name != exclude_file]
     
     if not all_files:
@@ -113,7 +113,7 @@ def load_all_signs(directory: Path, exclude_file: str) -> pd.DataFrame:
             print(f"Warning: Could not read {f.name}. Error: {e}")
             
     full_df = pd.concat(df_list, ignore_index=True)
-    # Drop records essential for linking and identification
+    # drop records essential for linking and identification
     full_df = full_df.dropna(subset=['id', 'longitude', 'latitude', 'rvvCode'])
     print(f"Loaded a total of {len(full_df)} traffic sign records from {len(all_files)} files.")
     return full_df
@@ -128,7 +128,7 @@ def main():
         return
 
     print("--- 2. PREPARING SIGN GEODATAFRAME ---")
-    # Convert sign locations to a GeoDataFrame (they are WGS84)
+    # and now convert sign locations to a GeoDataFrame (they are WGS84)
     geometry_points = [Point(xy) for xy in zip(df_signs["longitude"], df_signs["latitude"])]
     gdf_signs_wgs84 = gpd.GeoDataFrame(df_signs, geometry=geometry_points)
     gdf_signs_wgs84.set_crs(epsg=4326, inplace=True)
@@ -151,20 +151,20 @@ def main():
     print("Re-projected both datasets to EPSG:28992 (Dutch Grid).")
 
     print("--- 5. PERFORMING SPATIAL JOIN (sjoin_nearest) ---")
-    # This is memory-intensive but necessary
+    # memory-intensive step but also necessary
     sensors_matched = gpd.sjoin_nearest(signs_proj, roads_proj, how='left')
     
-    # Map 'index_right' (from roads_proj) back to 'osm_id'
+    # map 'index_right' (from roads_proj) back to 'osm_id'
     osm_id_map = roads_proj['osm_id'].to_dict()
     sensors_matched['osm_id'] = sensors_matched['index_right'].map(osm_id_map)
     
-    # Join the new 'osm_id' column back to the original WGS84 GDF
+    # join the 'osm_id' column back to the original WGS84 GDF
     final_signs = gdf_signs_wgs84.join(sensors_matched[['osm_id']])
     final_signs = final_signs.dropna(subset=['osm_id'])
     
     print(f"Successfully matched {len(final_signs)} out of {len(df_signs)} signs to a road segment.")
     
-    # Clean osm_id to be a clean string
+    # clean osm_id to clean string
     final_signs['osm_id'] = final_signs['osm_id'].astype(float).astype(int).astype(str)
 
     print("--- 6. GENERATING RDF TRIPLES ---")
@@ -189,17 +189,17 @@ def main():
         # 1. Define the instance and its class
         g.add((sign_uri, RDF.type, TRAFFIC.TrafficSign))
 
-        # 2. Add its machine-readable identifier (the new property)
+        # 2. Add its machine-readable identifier
         g.add((sign_uri, TRAFFIC.signId, Literal(sign_id, datatype=XSD.string)))
 
-        # 3. Add the RVV code (the *type* of sign)
+        # 3. Add the RVV code (the type of sign)
         g.add((sign_uri, TRAFFIC.rvvCode, Literal(rvv_code, datatype=XSD.token)))
         
-        # 4. Add the human-readable label (from your dictionary)
+        # 4. Add the human-readable label
         sign_label = sign_meanings.get(rvv_code, "Unknown Sign")
         g.add((sign_uri, RDFS.label, Literal(sign_label, lang="en")))
 
-        # 5. Add the sign's value (from 'blackCode' column)
+        # 5. Add the sign's value
         black_code = sign.get('blackCode')
         if pd.notna(black_code):
             g.add((sign_uri, TRAFFIC.signValue, Literal(str(black_code), datatype=XSD.string)))

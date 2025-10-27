@@ -1,7 +1,7 @@
 """
 Final Script to Match BRON Accident Data (2022-2024) to OSM Road Segments.
 
-This is a LOW-MEMORY (16GB RAM safe) and HIGH-ACCURACY version.
+This is a LOW-MEMORY (16GB RAM safe) version.
 
 It loads the OSM road network ONCE. Then, for each year:
 1.  Reads the BRON accidents CSV.
@@ -10,7 +10,7 @@ It loads the OSM road network ONCE. Then, for each year:
 3.  Loops through each unique street name:
     a. Gets a small slice of accidents (WGS84) and OSM roads (WGS84).
     b. Parses the 'other_tags' for ONLY that small OSM slice.
-    c. **CRITICAL:** Re-projects both small slices to RD New (EPSG:28992)
+    c. Re-projects both small slices to RD New (EPSG:28992)
        to perform an accurate, meter-based "nearest" join.
 4.  Saves the result as a new, year-specific enriched CSV.
 """
@@ -59,13 +59,13 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
     print(f"Loaded {len(df_bron)} accidents for {year}.")
 
     # --- 2. Prepare BRON GeoDataFrame (WGS84) ---
-    # Create GeoDataFrame from RD New coordinates
+    # now need to creatre a GeoDataFrame from RD New coordinates
     geometry_points_rdnew = [Point(xy) for xy in zip(df_bron["longitude"], df_bron["latitude"])]
     gdf_bron_wgs84 = gpd.GeoDataFrame(df_bron, geometry=geometry_points_rdnew)
     
     # ** THE COORDINATE FIX **
-    gdf_bron_wgs84.set_crs(epsg=28992, inplace=True) # 1. Set original RD New
-    gdf_bron_wgs84 = gdf_bron_wgs84.to_crs(epsg=4326) # 2. Transform to WGS84
+    gdf_bron_wgs84.set_crs(epsg=28992, inplace=True) # first, set original RD New
+    gdf_bron_wgs84 = gdf_bron_wgs84.to_crs(epsg=4326) # second, transform to WGS84
     print(f"Correctly transformed {year} BRON coordinates from EPSG:28992 to 4326.")
 
     # --- 3. Match Accidents to Roads (Low-Memory) ---
@@ -73,7 +73,6 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
     print(f"Found {len(unique_bron_names)} unique street names to process for {year}.")
     matched_data_list = []
 
-    # These are the attributes we want to extract
     attributes_to_extract = [
         "maxspeed", "surface", "zone:traffic", "bridge", "tunnel"
     ]
@@ -89,7 +88,7 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
         # 2. Parse tags on the small WGS84 slice
         osm_tags_parsed = roads_slice_wgs84["other_tags"].apply(parse_hstore)
         
-        # ** THE KeyError: 0 FIX **
+        # fixing a keyerror
         osm_tags_df = pd.DataFrame.from_records(osm_tags_parsed.tolist(), index=roads_slice_wgs84.index)
         
         roads_slice_wgs84 = roads_slice_wgs84.join(osm_tags_df)
@@ -100,9 +99,9 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
         
         roads_with_name_wgs84 = roads_slice_wgs84[cols_to_keep_join]
 
-        # --- *** THE ACCURACY FIX (Fixes the UserWarning) *** ---
+        # fixing userwarning
         # 3. Re-project *both* slices to RD New (meters) for the join
-        # Suppress warnings during this known-safe operation
+        # suppress warnings fro this operation, keep popping up even tho everything is fine
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", UserWarning)
             accidents_projected = accidents_on_street_wgs84.to_crs(epsg=28992)
@@ -114,7 +113,6 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
             roads_projected,
             how="left",
         )
-        # --- *** END FIX *** ---
         
         matched_data_list.append(matched)
 
@@ -138,13 +136,12 @@ def process_year(year: int, gdf_osm_all_wgs84: gpd.GeoDataFrame, data_dir: Path)
 
     out_path = data_dir / "data_rdf" / f"accidents_enriched_osm_{year}.csv"
     
-    # Drop the geometry column before saving to CSV
+    # drop the geometry column before saving to CSV
     final_matched_gdf.drop(columns='geometry', errors='ignore').to_csv(out_path, index=False)
     print(f"Saved enriched data to '{out_path}'")
 
 
 def main() -> None:
-    # Use environment variable or current folder as project root
     project_root = Path(os.environ.get("TRAFFIC_ONTOLOGY_PROJECT_ROOT", Path.cwd()))
     print(f"Using project root: {project_root}")
 
@@ -152,29 +149,28 @@ def main() -> None:
     # Step 1: Load OSM data (ONLY ONCE)
     # -------------------------------------------------------------------------
     gpkg_file = project_root / "OSM_data_filtered.gpkg"
-    # We *don't* parse other_tags here. We just load the raw columns.
+    # we just load the raw columns and not parse other_tags here
     columns_to_load = ["osm_id", "highway", "name", "other_tags", "geometry"]
     
     print("--- LOADING OSM DATA (ONCE) ---")
     print("This is the main memory load. Please be patient...")
     try:
         gdf_osm_all = gpd.read_file(gpkg_file, layer="lines")
-        # Filter columns *after* loading
+        # filter columns after loading
         gdf_osm_all = gdf_osm_all[columns_to_load]
         print(f"Loaded {len(gdf_osm_all)} total OSM road segments.")
     except Exception as e:
         print(f"Error loading GeoPackage: {e}")
         return
     
-    # The 'ogrinfo' confirmed the file is WGS84 (EPSG:4326)
-    # gdf_osm_all = gdf_osm_all.to_crs(epsg=4326) # Not needed if already 4326
+    # ran 'ogrinfo' command which confirmed the file is WGS84 (EPSG:4326)
     print("OSM data is in EPSG:4326.")
 
     # -------------------------------------------------------------------------
     # Step 2: Process each year
     # -------------------------------------------------------------------------
     for year in [2022, 2023, 2024]:
-        # Pass the full (but un-parsed) gdf_osm_all to the function
+        # pass the full un-parsed gdf_osm_all to the function
         process_year(year, gdf_osm_all, project_root)
 
     print("\n--- All years processed! ---")

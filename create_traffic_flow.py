@@ -18,12 +18,12 @@ import os
 from tqdm import tqdm
 import warnings
 import numpy as np
-import re # For sanitizing timestamps for URIs
+import re 
 
 # --- Configuration ---
 project_root = Path(os.environ.get("TRAFFIC_ONTOLOGY_PROJECT_ROOT", Path.cwd()))
 source_data_dir = project_root / "data_processed" / "merged"
-output_ttl_file = project_root / "data_rdf" / "traffic_flow.ttl" # Output file
+output_ttl_file = project_root / "data_rdf" / "traffic_flow.ttl"
 
 flow_csv_file = source_data_dir / "traffic_flow_with_coordinates.csv"
 speed_csv_file = source_data_dir / "traffic_speed_with_coordinates.csv"
@@ -36,7 +36,7 @@ XSD = Namespace("http://www.w3.org/2001/XMLSchema#")
 
 def sanitize_for_uri(text: str) -> str:
     """Cleans a timestamp string to be a valid URI component."""
-    # Replaces ':', '+', ' ' with safe characters
+    # replaces ':', '+', ' ' with safe characters
     return re.sub(r"[:\+ ]", "_", text)
 
 def main():
@@ -62,12 +62,12 @@ def main():
     df_flow_clean = df_flow.dropna(subset=['measurement_index'])
     df_speed_clean = df_speed.dropna(subset=['measurement_index'])
 
-    # Select only the columns we need before merging
+    # Select only the columns needed before merging
     df_flow_clean = df_flow_clean[['site_id', 'timestamp', 'flow_rate']].dropna()
     df_speed_clean = df_speed_clean[['site_id', 'timestamp', 'speed']].dropna()
 
-    # Group by site_id and timestamp and calculate the mean
-    # This handles multiple measurements for the same sensor at the same time
+    # Group by site_id and timestamp and calculate the mean:
+    # this handles multiple measurements for the same sensor at the same time
     df_flow_agg = df_flow_clean.groupby(['site_id', 'timestamp']).mean().reset_index()
     df_speed_agg = df_speed_clean.groupby(['site_id', 'timestamp']).mean().reset_index()
     print(f"Aggregated to {len(df_flow_agg)} unique flow events and {len(df_speed_agg)} unique speed events.")
@@ -94,7 +94,7 @@ def main():
     g = Graph()
     g.bind("traffic", TRAFFIC)
     g.bind("inst", INST)
-    g.bind("geo", GEO) # Although not used here, good practice
+    g.bind("geo", GEO)
     g.bind("xsd", XSD)
     g.bind("rdfs", RDFS)
     
@@ -105,17 +105,17 @@ def main():
         site_id = str(row['site_id']).strip()
         timestamp_obj = row['timestamp_dt']
         
-        # Format timestamp to ISO 8601 (which it should already be)
+        # Format timestamp to ISO 8601 (which it should already be, but just to be ssafe)
         # and create a sanitized version for the URI
         try:
             timestamp_iso = timestamp_obj.isoformat()
             timestamp_uri_part = sanitize_for_uri(timestamp_iso)
         except Exception:
-            continue # Skip if timestamp is invalid
+            continue # skip if timestamp is invalid
 
         # --- Create URIs ---
         flow_uri = INST[f"flow_{site_id}_{timestamp_uri_part}"]
-        sensor_uri = INST[f"sensor_{site_id}"] # Link to the sensor instance
+        sensor_uri = INST[f"sensor_{site_id}"] # now we link it to the sensor instance
 
         # --- Create Triples ---
         
@@ -130,14 +130,14 @@ def main():
         if pd.notna(flow_rate_val):
             try:
                 g.add((flow_uri, TRAFFIC.flowRate, Literal(int(flow_rate_val), datatype=XSD.integer)))
-            except (ValueError, TypeError): pass # Skip if not a valid integer
+            except (ValueError, TypeError): pass
 
         # 4. Add the average speed (if it exists)
         speed_val = row.get('speed')
         if pd.notna(speed_val):
             try:
                 g.add((flow_uri, TRAFFIC.avgSpeed, Literal(float(speed_val), datatype=XSD.float)))
-            except (ValueError, TypeError): pass # Skip if not a valid float
+            except (ValueError, TypeError): pass 
 
         # 5. Add the exact time of the measurement
         g.add((flow_uri, TRAFFIC.timestamp, Literal(timestamp_iso, datatype=XSD.dateTime)))

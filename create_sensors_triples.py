@@ -26,7 +26,7 @@ data_rdf_dir = project_root / "data_rdf"
 source_data_dir = project_root / "data_processed" / "merged"
 osm_gpkg_file = project_root / "OSM_data_filtered.gpkg"
 sensor_csv_file = source_data_dir / "site_summary_with_coordinates.csv"
-output_ttl_file = data_rdf_dir / "sensors.ttl" # Output file
+output_ttl_file = data_rdf_dir / "sensors.ttl" 
 
 # Define Namespaces
 TRAFFIC = Namespace("http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/")
@@ -40,7 +40,7 @@ sensor_type_mapping = {
     "CountingPoint": TRAFFIC.CountingPoint,
     "MeasurementSection": TRAFFIC.MeasurementSection,
 }
-default_sensor_class = TRAFFIC.Sensor # Fallback if type is unknown
+default_sensor_class = TRAFFIC.Sensor # fallback if type is unknown
 
 def main():
     print("--- 1. LOADING SENSOR DATA ---")
@@ -56,7 +56,7 @@ def main():
     # Convert sensor locations to a GeoDataFrame
     geometry_points = [Point(xy) for xy in zip(df_sensors["longitude"], df_sensors["latitude"])]
     gdf_sensors_wgs84 = gpd.GeoDataFrame(df_sensors, geometry=geometry_points)
-    gdf_sensors_wgs84.set_crs(epsg=4326, inplace=True) # Data is in WGS84 (Lat/Lon)
+    gdf_sensors_wgs84.set_crs(epsg=4326, inplace=True) # data is in WGS84 (Lat/Lon)
     print("Sensor GeoDataFrame created (EPSG:4326).")
 
     print("--- 3. LOADING ROAD NETWORK DATA ---")
@@ -64,27 +64,27 @@ def main():
         print(f"Error: OSM GeoPackage not found at {osm_gpkg_file}")
         return
         
-    # Load only necessary columns from the road network to save memory
+    # we are now loading only necessary columns from the road network to save memory
     gdf_roads_wgs84 = gpd.read_file(osm_gpkg_file, layer='lines', columns=['osm_id', 'geometry'])
-    # Ensure it's WGS84 (it should be, as per our gpkg info)
+    # ensure it's WGS84
     gdf_roads_wgs84 = gdf_roads_wgs84.to_crs(epsg=4326)
     print(f"Loaded {len(gdf_roads_wgs84)} road segments (geometry only).")
 
     print("--- 4. RE-PROJECTING FOR ACCURATE SPATIAL JOIN ---")
-    # Re-project both GeoDataFrames to the Dutch grid (EPSG:28992) for a meter-based join
+    # re-project both GeoDataFrames to the Dutch grid (EPSG:28992) for a meter-based join
     with warnings.catch_warnings():
-        warnings.simplefilter("ignore", UserWarning) # Suppress known CRSUserWarning
+        warnings.simplefilter("ignore", UserWarning) # suppress annoying CRSUserWarning
         sensors_proj = gdf_sensors_wgs84.to_crs(epsg=28992)
         roads_proj = gdf_roads_wgs84.to_crs(epsg=28992)
     print("Re-projected both datasets to EPSG:28992 (Dutch Grid).")
 
     print("--- 5. PERFORMING SPATIAL JOIN (sjoin_nearest) ---")
-    # Join sensors (left) to the nearest road segment (right)
-    # This transfers 'osm_id' from roads_proj to the sensors_matched DataFrame
+    # join sensors (left) to the nearest road segment (right)
+    # this transfers 'osm_id' from roads_proj to the sensors_matched DataFrame
     sensors_matched = gpd.sjoin_nearest(sensors_proj, roads_proj, how='left')
     
-    # We joined on projected data, but we want the *original* WGS84 lat/lon
-    # for the WKT literal. Let's merge the join results back onto our original WGS84 sensor GDF.
+    # We joined on projected data, but we want the original WGS84 lat/lon
+    # for the WKT literal. We now merge the join results back onto the original WGS84 sensor GDF.
     # The 'index_right' column from sjoin_nearest corresponds to the index of 'roads_proj'.
     # We need to map this back to the 'osm_id' from 'roads_proj'.
     
@@ -94,14 +94,13 @@ def main():
     # Map the 'index_right' to get the 'osm_id' for each sensor
     sensors_matched['osm_id'] = sensors_matched['index_right'].map(osm_id_map)
     
-    # Now, drop the projected geometry and merge the osm_id back onto the original WGS84 GDF
-    # We use the index for this, as sjoin_nearest preserves the left-side index.
+    # drop the projected geometry and merge the osm_id back onto the original WGS84 GDF
     final_sensors = gdf_sensors_wgs84.join(sensors_matched[['osm_id']])
-    final_sensors = final_sensors.dropna(subset=['osm_id']) # Drop sensors that found no road
+    final_sensors = final_sensors.dropna(subset=['osm_id']) # drop sensors that found no road
     
     print(f"Successfully matched {len(final_sensors)} out of {len(df_sensors)} sensors to a road segment.")
     
-    # Clean osm_id to be a clean string
+    # clean osm_id to clean string
     final_sensors['osm_id'] = final_sensors['osm_id'].astype(float).astype(int).astype(str)
 
     print("--- 6. GENERATING RDF TRIPLES ---")
