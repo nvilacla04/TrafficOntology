@@ -267,6 +267,12 @@ traffic:locatedIn rdfs:range traffic:Location ;
 	rdfs:comment "Relates an infrastructure element to its location"@en ;
 	rdfs:label "located in"@en .
 # 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/measuredBy
+
+traffic:measuredBy a owl:ObjectProperty ;
+	rdfs:domain traffic:VehicleFlow ;
+	rdfs:range traffic:Sensor .
+# 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/monitors
 
 traffic:monitors a owl:ObjectProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty ;
@@ -415,6 +421,18 @@ traffic:rvvCode a owl:DatatypeProperty ;
 	rdfs:domain traffic:TrafficSign ;
 	rdfs:range xsd:token .
 # 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/sensorID
+
+traffic:sensorID a owl:DatatypeProperty ;
+	rdfs:domain traffic:Sensor ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/signValue
+
+traffic:signValue a owl:DatatypeProperty ;
+	rdfs:domain traffic:TrafficSign ;
+	rdfs:range xsd:string .
+# 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/surface
 
 traffic:surface a owl:DatatypeProperty ;
@@ -489,6 +507,11 @@ traffic:Accident a owl:Class ;
 	rdfs:comment "A traffic event involving a collision or incident"@en ;
 	rdfs:label "Accident"@en .
 # 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bicycle
+
+traffic:Bicycle a owl:Class ;
+	rdfs:subClassOf traffic:Vehicle .
+# 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bridge
 
 traffic:Bridge a owl:Class ;
@@ -496,11 +519,6 @@ traffic:Bridge a owl:Class ;
 	owl:disjointWith traffic:Tunnel ;
 	rdfs:comment "A structure that spans a physical obstacle"@en ;
 	rdfs:label "Bridge"@en .
-# 
-# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Bycicle
-
-traffic:Bycicle a owl:Class ;
-	rdfs:subClassOf traffic:Vehicle .
 # 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Car
 
@@ -522,6 +540,12 @@ traffic:Congestion a owl:Class ;
 	owl:disjointWith traffic:RoadWork ;
 	rdfs:comment "A traffic event characterized by slow-moving or stopped vehicles"@en ;
 	rdfs:label "Congestion"@en .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/CountingPoint
+
+traffic:CountingPoint a owl:Class ;
+	rdfs:subClassOf traffic:Sensor ;
+	owl:disjointWith traffic:MeasurementSection .
 # 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Dry
 
@@ -579,6 +603,11 @@ traffic:MajorRoad a owl:Class ;
 
 traffic:MaterialDamageOnly a owl:Class ;
 	rdfs:subClassOf traffic:Severity .
+# 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/MeasurementSection
+
+traffic:MeasurementSection a owl:Class ;
+	rdfs:subClassOf traffic:Sensor .
 # 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/Moped
 
