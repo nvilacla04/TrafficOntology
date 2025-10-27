@@ -1,1 +1,10 @@
-pip install SPARQLWrapper pandas numpy seaborn matplotlib python-dateutil
+SPARQLWrapper
+pandas
+numpy
+seaborn
+matplotlib
+python-dateutil
+shapely
+rdflib
+tqdm
+geopandas
