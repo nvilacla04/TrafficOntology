@@ -63,6 +63,18 @@ The final Knowledge Graph (`.ttl` files) is already provided in the `data_rdf/` 
 
 If you wish to regenerate the entire Knowledge Graph from the processed CSVs and the GeoPackage, you must run the scripts in the root directory in this specific order, as they have dependencies:
 
+0.  **`Traffic_Flow.py`** (Optional - if regenerating from XML):
+    * **Input:** `data_raw/other data/trafficspeed.xml.gz`.
+    * **Output:** `data_processed/traffic_speed_clean.csv`, `traffic_flow_clean.csv`, `site_summary.csv`.
+    * **Action:** Extracts traffic measurements from DATEX II XML format.
+    * **Note:** Pre-processed CSVs are included
+
+0.5. **`merge_traffic_with_sensors_FINAL.py`** (Optional):
+    * **Input:** Traffic CSVs and sensor location CSVs.
+    * **Output:** `data_processed/merged/*_with_coordinates.csv`.
+    * **Action:** Spatially matches traffic measurements to sensor locations, adds coordinates.
+    * **Note:** Pre-merged CSVs are included
+
 1.  **`run_match_osm.py`**:
     * **Input:** `data_processed/BRON_cleaned/*.csv` and `data_raw/OSM_data_filtered.gpkg`.
     * **Output:** `data_rdf/accidents_enriched_osm_*.csv` files.
@@ -160,3 +172,42 @@ You must import the files in the correct order, each into its own **named graph*
 ## 4. Analysis & Competency Questions
 
 All SPARQL queries used to answer our final Competency Questions, along with data visualizations and analysis, are located in the **`queries.ipynb`** Jupyter Notebook.
+
+## 5. Data Sources
+
+Some raw data files are stored locally and are **not included in this repository** due to size constraints.
+
+### Required Data Files:
+Download and place in the respective directories:
+
+**Traffic Measurements:**
+- `trafficspeed.xml.gz` --> `data_raw/other data/`
+- Source: [NDW Open Data Portal](https://data.ndw.nu/)
+
+**Sensor Locations:**
+- `NDW_AVG_Meetlocaties_Shapefile.zip` --> `data_raw/Sensors/`
+- Extract to get: `Meetvakken_WGS84.shp`, `Telpunten_WGS84.shp`
+- Source: [NDW Open Data Portal](https://data.ndw.nu/)
+
+**Traffic Signs:**
+- `trafficsigns_wgs84.geojson.gz` --> `data_raw/`
+- Source: [NDW Open Data Portal](https://data.ndw.nu/) (Verkeersborden dataset)
+
+**BRON Accident Data:**
+- Place BRON CSV files in `data_raw/BRON data/`
+- Source: [Rijkswaterstaat BRON](https://www.rijkswaterstaat.nl/zakelijk/open-data)
+
+**OpenStreetMap Road Network:**
+- `OSM_data_filtered.gpkg` (390 MB)
+- Already included in repository via Git LFS
+- Source: Filtered extract from OpenStreetMap
+
+**Processed Traffic Signs by Type:**
+- Files in `data_raw/traffic_signs_by_type/` (1.17 GB) too large for free LFS 
+https://vunl-my.sharepoint.com/:f:/g/personal/n_r_vilaclaraenomoto_student_vu_nl/Ep_kxDYidhpLhwLe-sf81ZkBmlLps5KOTGet8vXMNwguCg?e=rzyioY 
+- Generated from `trafficsigns_wgs84.geojson.gz` using `split_traffic_signs.py`
+- **Not included** - regenerate using the script or download from link
+
+* **`/data_raw/`**: Contains the original, untouched data (XMLs, shapefiles), including `OSM_data_filtered.gpkg` (the 390MB filtered OpenStreetMap dataset, which is the base map for our road network stored via **Git LFS**) and the initial exploratory/cleaning notebooks.
+  * **Note:** Most raw data files (XML, large GeoJSON) are **not included** in the repository due to size. See Data Sources section above.
+

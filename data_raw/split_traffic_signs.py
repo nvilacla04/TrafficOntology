@@ -1,6 +1,7 @@
 """
 Super cooked but the signage file is too big to push 
 to git so imma just split it into a couple smaller ones
+also made things way easier to work with
 
 """
 
@@ -46,7 +47,7 @@ def split_geojson_by_sign_type(
 
 
 
-    # Group by RVV code
+    #group by RVV code
     signs_by_type: Dict[str, List[Dict[Any, Any]]] = {}
     
     for feature in features:
@@ -115,6 +116,3 @@ if __name__ == '__main__':
     create_metadata_file(split_files, 'data_processed/traffic_signs_by_type')
     
     print(f"\n✅ Done WOOOHOOO! {len(split_files)} files in data_processed/traffic_signs_by_type/")
-    print("=" * 60)
-
-#Did not expect 175 sign types bruh but thats ok as none of them are even close to 100mb 
