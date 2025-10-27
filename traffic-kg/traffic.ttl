@@ -427,6 +427,12 @@ traffic:sensorID a owl:DatatypeProperty ;
 	rdfs:domain traffic:Sensor ;
 	rdfs:range xsd:string .
 # 
+# http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/signID
+
+traffic:signID a owl:DatatypeProperty ;
+	rdfs:domain traffic:TrafficSign ;
+	rdfs:range xsd:string .
+# 
 # http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/signValue
 
 traffic:signValue a owl:DatatypeProperty ;
