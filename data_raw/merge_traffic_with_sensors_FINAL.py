@@ -1,19 +1,17 @@
-#!/usr/bin/env python3
 """
-Merge Traffic Data with Sensor Locations - UPDATED
 
-Enhanced with proper understanding of site ID structure:
+traffic data structure 
+
+example: 
 RWS01_MONIBAS_0021hrl0802ra_1
 ├─ RWS01: Rijkswaterstaat region
-├─ MONIBAS: Device type (Monitoring Basis)
+├─ MONIBAS: Device type (MONitoring BASis)
 ├─ 0021: Road number (A21)
 ├─ hrl: Direction (hecto-links = left)
 ├─ 0802: Hectometer position (8.02 km)
 ├─ ra: Roadway/Lane A
 └─ _1: Sensor index
 
-Usage:
-    python merge_traffic_with_sensors.py
 """
 
 import pandas as pd
@@ -23,21 +21,21 @@ import re
 from difflib import get_close_matches
 
 # ============================================================================
-# CONFIGURATION - Relative paths (script runs from data_raw/)
+# CONF
 # ============================================================================
 
-# Get the project root (parent of data_raw where script is located)
+#get project root
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
-# Input files - using relative paths
+#input files
 TELPUNTEN_CSV = PROJECT_ROOT / 'data_processed' / 'Sensors_cleaned' / 'telpunten_all_columns.csv'
 MEETVAKKEN_CSV = PROJECT_ROOT / 'data_processed' / 'Sensors_cleaned' / 'meetvakken_all_columns.csv'
 TRAFFIC_SPEED_CSV = PROJECT_ROOT / 'data_processed' / 'traffic_flowtraffic_speed_clean.csv'
 TRAFFIC_FLOW_CSV = PROJECT_ROOT / 'data_processed' / 'traffic_flowtraffic_flow_clean.csv'
 SITE_SUMMARY_CSV = PROJECT_ROOT / 'data_processed' / 'traffic_flowsite_summary.csv'
 
-# Output directory
+#output directory
 OUTPUT_DIR = PROJECT_ROOT / 'data_processed' / 'merged'
 
 # ============================================================================
@@ -46,7 +44,7 @@ OUTPUT_DIR = PROJECT_ROOT / 'data_processed' / 'merged'
 
 def parse_rws_site_id(site_id):
     """
-    Parse RWS MONIBAS site ID structure.
+    Parse RWS MONIBAS site ID structure. defined above 
     
     Example: RWS01_MONIBAS_0021hrl0802ra_1
     Returns: dict with provider, device, road, direction, hectometer, lane, index
@@ -63,7 +61,7 @@ def parse_rws_site_id(site_id):
         'index': parts[3] if len(parts) > 3 else None
     }
     
-    # Try to parse the location code (e.g., 0021hrl0802ra)
+    #try to parse the location code (ex: 0021hrl0802ra) not always available
     code = result['full_code']
     match = re.match(r'(\d{4})(hr[lr])(\d{4})([a-z]{2})', code)
     
@@ -78,13 +76,13 @@ def parse_rws_site_id(site_id):
 
 def get_site_hierarchy(site_id):
     """
-    Extract hierarchical components for flexible matching.
+    extract hierarchical components for flexible matching.
     
-    Returns multiple levels of granularity:
-    - Level 1: Full ID (most specific)
-    - Level 2: Without index suffix
-    - Level 3: Provider + device + road + direction + hectometer
-    - Level 4: Provider + device + road
+    Returns multiple levels:
+    - Lvl 2: Without index suffix
+    - Lvl 3: Provider + device + road + direction + hectometer
+    - Lvl 1: Full ID (most specific)
+    - Lvl 4: Provider + device + road
     """
     site_str = str(site_id)
     
@@ -93,15 +91,15 @@ def get_site_hierarchy(site_id):
         'no_suffix': re.sub(r'_\d+$', '', site_str),
     }
     
-    # Parse structured parts
+    #parse structured parts
     parsed = parse_rws_site_id(site_id)
     if parsed and 'road_number' in parsed:
-        # Create base location (road + direction + hectometer)
+        #create base location (road + direction + hectometer)
         levels['base_location'] = f"{parsed['provider']}_{parsed['device']}_{parsed['road_number']}{parsed['direction']}{parsed['hectometer']}"
-        # Create road level (just road)
+        #create road level (just road)
         levels['road_only'] = f"{parsed['provider']}_{parsed['device']}_{parsed['road_number']}"
     else:
-        # Fallback for non-RWS patterns
+        #fallback for non-RWS patterns
         parts = site_str.split('_')
         if len(parts) >= 3:
             levels['base_location'] = '_'.join(parts[:3])
@@ -111,12 +109,12 @@ def get_site_hierarchy(site_id):
 
 
 # ============================================================================
-# HELPER FUNCTIONS (Updated with new understanding)
+# HELPER FUNCTIONS (updated with new understanding of ID formatting)
 # ============================================================================
 
 def normalize_site_id(site_id):
     """
-    Normalize site ID by removing trailing index suffix.
+    normalize site ID by removing trailing index suffix.
     
     Examples:
         RWS01_MONIBAS_0021hrl0802ra_1 → RWS01_MONIBAS_0021hrl0802ra
@@ -128,23 +126,23 @@ def normalize_site_id(site_id):
 
 def extract_base_code(site_id):
     """
-    Extract the base location code (provider + device + road + position).
+    extract the base location code (provider + device + road + position).
     
     Examples:
-        RWS01_MONIBAS_0021hrl0802ra_1 → RWS01_MONIBAS_0021hrl0802
-        GRT02_MORO_1940_2 → GRT02_MORO_1940
+        RWS01_MONIBAS_0021hrl0802ra_1 = RWS01_MONIBAS_0021hrl0802
+        GRT02_MORO_1940_2 = GRT02_MORO_1940
     """
     normalized = normalize_site_id(site_id)
     
-    # For RWS pattern, remove lane designation (ra, rb, etc.)
+    #remove lane designation (ra, rb ...)
     base = re.sub(r'[a-z]{2}$', '', normalized)
     return base
 
 
 def create_lookup_dict(sensor_df, id_column='dgl_loc'):
     """
-    Create multiple lookup dictionaries for flexible matching.
-    Uses hierarchical site ID structure for intelligent matching.
+    create multiple lookup dictionaries for flexible matching
+    uses hierarchical site ID structure for matching
     """
     lookups = {
         'exact': {},
@@ -157,23 +155,23 @@ def create_lookup_dict(sensor_df, id_column='dgl_loc'):
         site_id = str(row[id_column])
         hierarchy = get_site_hierarchy(site_id)
         
-        # Exact match
+        #exact match!
         lookups['exact'][site_id] = row
         
-        # Normalized match (without index suffix)
+        #normalized match (without index suffix)
         normalized = hierarchy['no_suffix']
         if normalized not in lookups['normalized']:
             lookups['normalized'][normalized] = []
         lookups['normalized'][normalized].append(row)
         
-        # Base location match (road + direction + hectometer)
+        #base location match (road + direction + hectometer)
         if 'base_location' in hierarchy:
             base = hierarchy['base_location']
             if base not in lookups['base']:
                 lookups['base'][base] = []
             lookups['base'][base].append(row)
         
-        # Road-only match
+        #road-only match
         if 'road_only' in hierarchy:
             road = hierarchy['road_only']
             if road not in lookups['road']:
@@ -185,9 +183,9 @@ def create_lookup_dict(sensor_df, id_column='dgl_loc'):
 
 def find_best_match(traffic_site_id, sensor_lookups, sensor_df, id_column='dgl_loc'):
     """
-    Find the best matching sensor using hierarchical site ID structure.
+    find the best matching sensor using hierarchical site ID structure
     
-    Strategy:
+    prios:
     1. Exact match (same sensor, same lane, same index)
     2. Normalized match (same sensor, same lane, different index)
     3. Base location match (same road + direction + position, different lane)
@@ -197,23 +195,23 @@ def find_best_match(traffic_site_id, sensor_lookups, sensor_df, id_column='dgl_l
     traffic_site = str(traffic_site_id)
     hierarchy = get_site_hierarchy(traffic_site)
     
-    # Strategy 1: Exact match
+    #1
     if traffic_site in sensor_lookups['exact']:
         return sensor_lookups['exact'][traffic_site], 'exact'
     
-    # Strategy 2: Normalized match (same location, any index)
+    #2
     normalized = hierarchy['no_suffix']
     if normalized in sensor_lookups['normalized']:
         matches = sensor_lookups['normalized'][normalized]
         return matches[0], 'normalized'
     
-    # Strategy 3: Base location match (same road position, any lane)
+    #3
     if 'base_location' in hierarchy:
         base = hierarchy['base_location']
         if base in sensor_lookups['base']:
             matches = sensor_lookups['base'][base]
             if len(matches) > 1:
-                # Find closest by full string similarity
+                #find closest by full string similarity
                 sensor_ids = [str(m[id_column]) for m in matches]
                 closest = get_close_matches(traffic_site, sensor_ids, n=1, cutoff=0.6)
                 if closest:
@@ -221,7 +219,7 @@ def find_best_match(traffic_site_id, sensor_lookups, sensor_df, id_column='dgl_l
                     return matching_row, 'base_location'
             return matches[0], 'base_location'
     
-    # Strategy 4: Road-only match (same road, different position)
+    #4
     if 'road_only' in hierarchy:
         road = hierarchy['road_only']
         if road in sensor_lookups['road']:
@@ -229,7 +227,7 @@ def find_best_match(traffic_site_id, sensor_lookups, sensor_df, id_column='dgl_l
             # Take first as representative location
             return matches[0], 'road_only'
     
-    # Strategy 5: Fuzzy match (last resort)
+    #5 
     all_sensor_ids = sensor_df[id_column].astype(str).tolist()
     fuzzy_matches = get_close_matches(traffic_site, all_sensor_ids, n=1, cutoff=0.85)
     if fuzzy_matches:
@@ -246,18 +244,18 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
     print("MERGING TRAFFIC DATA WITH SENSOR LOCATIONS")
     print("="*70)
     
-    # Create lookup dictionaries
-    print("\n📚 Creating lookup dictionaries...")
+    #lookup dictionaries
+    print("\n Creating lookup dictionaries...")
     telpunten_lookups = create_lookup_dict(telpunten_df, 'dgl_loc')
     meetvakken_lookups = create_lookup_dict(meetvakken_df, 'dgl_loc')
     
     print(f"   Telpunten: {len(telpunten_df):,} counting points")
     print(f"   Meetvakken: {len(meetvakken_df):,} measurement sections")
     
-    # Prepare result dataframe
+    #prep result dataframe
     result_df = traffic_df.copy()
     
-    # Add coordinate columns
+    #add cords
     result_df['latitude'] = np.nan
     result_df['longitude'] = np.nan
     result_df['sensor_type'] = None
@@ -265,7 +263,7 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
     result_df['wegtype'] = None
     result_df['match_strategy'] = None
     
-    # Add parsed site ID components
+    #parsed site ID components
     result_df['provider'] = None
     result_df['device_type'] = None
     result_df['road_number'] = None
@@ -273,9 +271,9 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
     result_df['hectometer'] = None
     result_df['lane'] = None
     
-    print(f"\n🔍 Matching {len(traffic_df):,} traffic records...")
+    print(f"\n Matching {len(traffic_df):,} traffic records...")
     
-    # Statistics
+    #stats
     stats = {
         'telpunten_exact': 0,
         'telpunten_normalized': 0,
@@ -290,11 +288,11 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
         'no_match': 0
     }
     
-    # Iterate through traffic data
+    #iterate through traffic data
     for idx, row in traffic_df.iterrows():
         traffic_site = row[traffic_id_col]
         
-        # Parse site ID components
+        #parse site ID components
         parsed = parse_rws_site_id(traffic_site)
         if parsed:
             result_df.at[idx, 'provider'] = parsed.get('provider')
@@ -304,7 +302,7 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
             result_df.at[idx, 'hectometer'] = parsed.get('hectometer')
             result_df.at[idx, 'lane'] = parsed.get('lane')
         
-        # Try telpunten first (exact point locations)
+        #try telpunten first exact point locations
         match, strategy = find_best_match(traffic_site, telpunten_lookups, telpunten_df, 'dgl_loc')
         
         if match is not None:
@@ -317,7 +315,7 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
             stats[f'telpunten_{strategy}'] += 1
             continue
         
-        # Try meetvakken (section centroids) as fallback
+        #try meetvakken section centroids as fallback
         match, strategy = find_best_match(traffic_site, meetvakken_lookups, meetvakken_df, 'dgl_loc')
         
         if match is not None:
@@ -330,23 +328,21 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
             stats[f'meetvakken_{strategy}'] += 1
             continue
         
-        # No match found
+        #no match counter
         stats['no_match'] += 1
     
-    # Print statistics
+    #print statistics
     total_matched = len(result_df[result_df['latitude'].notna()])
     match_rate = (total_matched / len(result_df)) * 100
     
-    print("\n" + "="*70)
-    print("MERGE RESULTS")
-    print("="*70)
+    print("\nMERGE RESULTS")
     
-    print(f"\n📊 Overall Statistics:")
+    print(f"\n Overall Statistics:")
     print(f"   Total traffic records: {len(result_df):,}")
     print(f"   Successfully matched: {total_matched:,} ({match_rate:.1f}%)")
     print(f"   No match found: {stats['no_match']:,} ({stats['no_match']/len(result_df)*100:.1f}%)")
     
-    print(f"\n📍 Matched with Telpunten (exact points):")
+    print(f"\n Matched with Telpunten (exact points):")
     tel_total = sum(v for k, v in stats.items() if k.startswith('telpunten'))
     print(f"   Total: {tel_total:,}")
     print(f"   - Exact match: {stats['telpunten_exact']:,}")
@@ -355,7 +351,7 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
     print(f"   - Road only (same road): {stats['telpunten_road_only']:,}")
     print(f"   - Fuzzy match: {stats['telpunten_fuzzy']:,}")
     
-    print(f"\n📍 Matched with Meetvakken (section centroids):")
+    print(f"\n Matched with Meetvakken (section centroids):")
     meet_total = sum(v for k, v in stats.items() if k.startswith('meetvakken'))
     print(f"   Total: {meet_total:,}")
     print(f"   - Exact match: {stats['meetvakken_exact']:,}")
@@ -368,79 +364,77 @@ def merge_with_sensors(traffic_df, telpunten_df, meetvakken_df, traffic_id_col='
 
 
 def print_sample_matches(merged_df, n=5):
-    """Print sample of matched records with parsed components."""
-    print(f"\n📋 Sample of matched records (first {n}):")
+    """ample of matched records with parsed components"""
+    print(f"\n Sample of matched records (first {n}):")
     sample = merged_df[merged_df['latitude'].notna()].head(n)
     for idx, row in sample.iterrows():
-        print(f"\n   Traffic ID: {row['site_id']}")
+        print(f"\n  Traffic ID: {row['site_id']}")
         if pd.notna(row.get('road_number')):
-            print(f"   Parsed: Road {row['road_number']}, {row['direction']}, " + 
+            print(f"    Parsed: Road {row['road_number']}, {row['direction']}, " + 
                   f"Hectometer {row['hectometer']}, Lane {row['lane']}")
-        print(f"   Matched to: {row['matched_dgl_loc']}")
-        print(f"   Coordinates: ({row['latitude']:.6f}, {row['longitude']:.6f})")
-        print(f"   Type: {row['sensor_type']}")
-        print(f"   Strategy: {row['match_strategy']}")
+        print(f"    Matched to: {row['matched_dgl_loc']}")
+        print(f"    Coordinates: ({row['latitude']:.6f}, {row['longitude']:.6f})")
+        print(f"    Type: {row['sensor_type']}")
+        print(f"    Strategy: {row['match_strategy']}")
 
 
 def print_sample_unmatched(merged_df, n=10):
-    """Print sample of unmatched records."""
+    """print sample of unmatched records"""
     unmatched = merged_df[merged_df['latitude'].isna()]
     if len(unmatched) > 0:
-        print(f"\n⚠️  Sample of unmatched site IDs (first {n}):")
+        print(f"\n  Sample of unmatched site IDs (first {n}):")
         for site_id in unmatched['site_id'].unique()[:n]:
-            print(f"   - {site_id}")
+            print(f"    - {site_id}")
             hierarchy = get_site_hierarchy(site_id)
-            print(f"     Normalized: {hierarchy['no_suffix']}")
+            print(f"        Normalized: {hierarchy['no_suffix']}")
             if 'base_location' in hierarchy:
-                print(f"     Base location: {hierarchy['base_location']}")
+                print(f"        Base location: {hierarchy['base_location']}")
 
 
 # ============================================================================
-# MAIN EXECUTION
+# MAIN
 # ============================================================================
 
 def main():
-    print("="*70)
+    print("-"*70)
     print("TRAFFIC DATA + SENSOR LOCATIONS MERGER")
     print("Enhanced with Site ID Structure Understanding")
-    print("="*70)
+    print("-"*70)
     
-    # Create output directory
+    #output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"\nOutput directory: {OUTPUT_DIR}")
     
-    # Load sensor data
+    #load sensor data
     print("\n📂 Loading sensor data...")
     try:
         telpunten_df = pd.read_csv(TELPUNTEN_CSV)
-        print(f"   ✅ Telpunten loaded: {len(telpunten_df):,} records")
+        print(f"    Telpunten loaded: {len(telpunten_df):,} records")
     except FileNotFoundError:
-        print(f"   ❌ Telpunten file not found: {TELPUNTEN_CSV}")
-        print("   Please update the path or run sensor_exploration_and_cleaning_fixed.ipynb first")
+        print(f"    ❌ Telpunten file not found: {TELPUNTEN_CSV}")
+        print("     update path or run sensor_exploration_and_cleaning_fixed.ipynb first")
         return
     
     try:
         meetvakken_df = pd.read_csv(MEETVAKKEN_CSV)
-        print(f"   ✅ Meetvakken loaded: {len(meetvakken_df):,} records")
+        print(f"    Meetvakken loaded: {len(meetvakken_df):,} records")
     except FileNotFoundError:
         print(f"   ❌ Meetvakken file not found: {MEETVAKKEN_CSV}")
-        print("   Please update the path or run sensor_exploration_and_cleaning_fixed.ipynb first")
+        print("     update the path or run sensor_exploration_and_cleaning_fixed.ipynb first")
         return
     
     # Check for dgl_loc column
     if 'dgl_loc' not in telpunten_df.columns:
-        print("\n   ⚠️  WARNING: 'dgl_loc' column not found in telpunten!")
-        print("   Please re-run sensor_exploration_and_cleaning_fixed.ipynb")
+        print("\n   ⚠️WARNING: 'dgl_loc' column not found in telpunten!")
         print(f"   Available columns: {telpunten_df.columns.tolist()}")
         return
     
     if 'dgl_loc' not in meetvakken_df.columns:
-        print("\n   ⚠️  WARNING: 'dgl_loc' column not found in meetvakken!")
-        print("   Please re-run sensor_exploration_and_cleaning_fixed.ipynb")
+        print("\n   ⚠️WARNING: 'dgl_loc' column not found in meetvakken!")
         print(f"   Available columns: {meetvakken_df.columns.tolist()}")
         return
     
-    # Process each traffic data file
+    #process each traffic data file
     traffic_files = [
         ('traffic_speed', TRAFFIC_SPEED_CSV),
         ('traffic_flow', TRAFFIC_FLOW_CSV),
@@ -448,43 +442,37 @@ def main():
     ]
     
     for file_name, file_path in traffic_files:
-        print(f"\n{'='*70}")
         print(f"Processing: {file_name}")
-        print(f"{'='*70}")
         
         try:
             traffic_df = pd.read_csv(file_path)
-            print(f"✅ Loaded: {len(traffic_df):,} records")
+            print(f"✅Loaded: {len(traffic_df):,} records")
         except FileNotFoundError:
-            print(f"❌ File not found: {file_path}")
-            print("   Skipping...")
+            print(f"❌File not found: {file_path}")
             continue
         
-        # Check for site_id column
+        #check for site_id column
         if 'site_id' not in traffic_df.columns:
-            print(f"⚠️  WARNING: 'site_id' column not found!")
-            print(f"Available columns: {traffic_df.columns.tolist()}")
+            print(f"⚠️WARNING: 'site_id' column not found!")
             continue
         
-        # Merge
+        #merge
         merged_df, stats = merge_with_sensors(traffic_df, telpunten_df, meetvakken_df)
         
-        # Show samples
-        print_sample_matches(merged_df, n=3)
-        print_sample_unmatched(merged_df, n=5)
+        #show samples
+        #print_sample_matches(merged_df, n=3)
+        #print_sample_unmatched(merged_df, n=5)
         
-        # Save result
+        #save
         output_file = OUTPUT_DIR / f"{file_name}_with_coordinates.csv"
         merged_df.to_csv(output_file, index=False)
-        print(f"\n💾 Saved to: {output_file}")
-        print(f"   Columns: {merged_df.columns.tolist()}")
+        print(f"\n Saved to: {output_file}")
+        print(f"    Columns: {merged_df.columns.tolist()}")
     
-    print("\n" + "="*70)
-    print("✅ MERGE COMPLETE!")
+    print("\n" + "-"*70)
+    print("MERGE COMPLETE!")
     print("="*70)
     print(f"\nOutput files in: {OUTPUT_DIR}")
-    print("\nColumns added: latitude, longitude, provider, device_type, road_number,")
-    print("              direction, hectometer, lane, match_strategy")
 
 
 if __name__ == "__main__":
