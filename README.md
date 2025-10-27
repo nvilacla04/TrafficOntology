@@ -192,6 +192,7 @@ Download and place in the respective directories:
 **Traffic Signs:**
 - `trafficsigns_wgs84.geojson.gz` --> `data_raw/`
 - Source: [NDW Open Data Portal](https://data.ndw.nu/) (Verkeersborden dataset)
+- **Note:** Needed if Traffic Signs by type is not available 
 
 **BRON Accident Data:**
 - Place BRON CSV files in `data_raw/BRON data/`
@@ -201,9 +202,10 @@ Download and place in the respective directories:
 - `OSM_data_filtered.gpkg` (390 MB)
 - Already included in repository via Git LFS
 - Source: Filtered extract from OpenStreetMap
+- **Note:** Results will be included so original is not needed
 
 **Processed Traffic Signs by Type:**
-- Files in `data_raw/traffic_signs_by_type/` (1.17 GB) too large for free LFS 
+- Files in `data_raw/traffic_signs_by_type/` (1 GB+) too large for free LFS 
 https://vunl-my.sharepoint.com/:f:/g/personal/n_r_vilaclaraenomoto_student_vu_nl/Ep_kxDYidhpLhwLe-sf81ZkBmlLps5KOTGet8vXMNwguCg?e=rzyioY 
 - Generated from `trafficsigns_wgs84.geojson.gz` using `split_traffic_signs.py`
 - **Not included** - regenerate using the script or download from link
