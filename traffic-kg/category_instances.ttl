@@ -1,0 +1,40 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/> .
+@prefix inst: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Severity Instances
+inst:MaterialDamageOnly rdf:type traffic:Severity ;
+    rdfs:label "Material Damage Only"@en , "Uitsluitend materiele schade"@nl .
+
+inst:Injury rdf:type traffic:Severity ;
+    rdfs:label "Injury"@en , "Letsel"@nl .
+
+inst:Fatal rdf:type traffic:Severity ;
+    rdfs:label "Fatal"@en , "Dodelijk"@nl .
+
+# Road Condition Instances
+inst:Dry rdf:type traffic:RoadCondition ;
+    rdfs:label "Dry"@en , "Droog"@nl .
+
+inst:Wet rdf:type traffic:RoadCondition ;
+    rdfs:label "Wet"@en , "Nat"@nl .
+
+inst:Snow rdf:type traffic:RoadCondition ;
+    rdfs:label "Snow/Ice"@en , "Sneeuw/ijzel"@nl .
+
+# Vehicle Class Instances (Optional but can be useful for querying categories)
+# Note: These represent the *types*, not specific vehicles in accidents.
+# If you prefer only using classes, you don't strictly need these,
+# but having them allows easier querying like "show me all accidents involving inst:Car".
+# Your script will link to the *class* (e.g., traffic:Car), not these instances.
+# Update: Based on discussion, we link accidents to new unique vehicle instances typed with the class.
+# So, these specific instances below might not be strictly necessary for linking,
+# but they are good practice to define the canonical concepts.
+
+inst:Bicycle rdf:type traffic:Bycicle . # Represents the concept/category Bicycle
+inst:Car rdf:type traffic:Car .         # Represents the concept/category Car
+inst:Moped rdf:type traffic:Moped .       # Represents the concept/category Moped
+inst:Pedestrian rdf:type traffic:Pedestrian . # Represents the concept/category Pedestrian
+inst:Truck rdf:type traffic:Truck .       # Represents the concept/category Truck
+inst:OtherVehicle rdf:type traffic:otherVehicle . # Represents the concept/category Other Vehicle
