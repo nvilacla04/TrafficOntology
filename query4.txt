@@ -1,0 +1,25 @@
+PREFIX traffic: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/>
+PREFIX inst: <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/instance/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?road ?roadName (COUNT(DISTINCT ?accident) AS ?vulnerableUserAccidents)
+WHERE {
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/accidents> {
+    ?accident traffic:occursOn ?road ;
+              traffic:involvesVehicle ?vehicle ;
+              traffic:hasRoadCondition ?condition .
+              
+    ?vehicle rdf:type ?vehicleType .
+    FILTER(?vehicleType IN (traffic:Pedestrian, traffic:Bycicle)) # Filter for vulnerable users
+    FILTER(?condition IN (inst:Wet, inst:Snow)) 
+  }
+  GRAPH <http://www.semanticweb.org/nicol/ontologies/2025/9/traffic/graph/roads> {
+    ?road rdfs:label ?roadName ;
+          traffic:maxSpeedLimit ?speed .
+          
+    FILTER(?speed > 30)
+  }
+}
+GROUP BY ?road ?roadName
+ORDER BY DESC(?vulnerableUserAccidents)
+LIMIT 20
